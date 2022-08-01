@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./Navbar";
+import Shows from "./pages/shows";
+import Set_Lists from "./pages/set-lists";
+import Home from "./pages/home";
+import Songs from "./pages/songs";
+import "./App.css";
+import "./styles.css";
 
 function App() {
+  let Component;
+  switch (window.location.pathname) {
+    // case "/home":
+    //   Component = Home;
+    //   break;
+    case "/shows":
+      Component = Shows;
+      break;
+    case "/set-lists":
+      Component = Set_Lists;
+      break;
+    case "/songs":
+      Component = Songs;
+      break;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Component />
+    </>
   );
 }
 
