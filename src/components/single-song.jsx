@@ -23,7 +23,7 @@ function SingleSong({ id }) {
   return (
     <section>
       <div>
-        <button onClick={() => handleShowMore()}>Click for more...</button>
+        <h1 onClick={() => handleShowMore()}>{song.title}</h1>
       </div>
       {isShown && (
         <div>
@@ -31,6 +31,7 @@ function SingleSong({ id }) {
           <p>Composer: {song.composer}</p>
           <p>Instrumentation: {song.instrumentation}</p>
           <p>Lyrics: {song.lyrics}</p>
+          <p className="dev">Edit song button here </p>
         </div>
       )}
     </section>

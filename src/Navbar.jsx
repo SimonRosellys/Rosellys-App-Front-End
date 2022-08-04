@@ -5,15 +5,15 @@ export default function Navbar() {
         The Rosellys App
       </a>
       <ul>
-        {/* <li>
-          <a href="/home">Home</a>
-        </li> */}
+        <li>
+          <a href="/">Home</a>
+        </li>
         <li>
           <a href="/shows">Shows</a>
         </li>
-        <li>
+        {/* <li>
           <a href="/set-lists">Set Lists</a>
-        </li>
+        </li> */}
         <li>
           <a href="/songs">Songs</a>
         </li>

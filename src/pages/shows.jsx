@@ -5,25 +5,25 @@ import SingleShow from "../components/single-show";
 
 const Shows = () => {
   const [shows, setShows] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getShows().then((shows) => {
       setShows(shows);
-      // setIsLoading(false);
+      setIsLoading(false);
     });
   }, []);
 
-  // if (isLoading) return <p>Don't have a cow man, your shows are on the way</p>;
+  if (isLoading) return <p>Don't have a cow man, your shows are on the way</p>;
 
   return (
     <section>
+      <h1 className="dev">Add a show button here</h1>
       <nav>
         <h1 className="list-title">List of Rosellys Shows</h1>
         {shows.map((show) => {
           return (
             <div className="show-list-items" key={show.show_id}>
-              <h1>{show.venue_name}</h1>
               <div>
                 <SingleShow id={show.show_id} />
               </div>

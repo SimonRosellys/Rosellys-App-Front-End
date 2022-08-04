@@ -16,7 +16,7 @@ export const getShows = async () => {
 
 export const getSingleShow = async (id) => {
   const { data } = await rosellysApi.get(`/shows/${id}`);
-  console.log(data[0].venue_name);
+  // console.log(data[0].venue_name);
   return data;
 };
 

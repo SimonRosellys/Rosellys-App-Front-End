@@ -7,6 +7,7 @@ body {
 }
 
 .nav {
+  /* position: fixed; */
   background-color: #333;
   color: white;
   display: flex;
@@ -34,28 +35,30 @@ body {
 }
 
 .site-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
-.nav li.active {
+/* .nav li.active {
   background-color: #555;
 }
 
 .nav li:hover {
   background-color: #777;
-}
+} */
 
 .list-title {
   /* border: 1px solid #182a37; */
   text-align: center;
   color: rgb(0, 0, 0);
+  margin-bottom: 1px;
+  margin-top: 1px;
 }
 
 .show-list-items {
   color: rgb(0, 0, 0);
   /* border: 1px solid #ff0000; */
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 .show-list-items p {
@@ -72,7 +75,8 @@ body {
   color: rgb(0, 0, 0);
   /* border: 1px solid #ff0000; */
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .song-list-items p {
@@ -83,4 +87,19 @@ body {
 .song-list-items h1 {
   font-size: 2rem;
   margin: 5px;
+}
+
+.home-logo {
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.dev {
+  color: rgb(255, 25, 25);
+  text-align: center;
+  margin-bottom: 1px;
+  margin-top: 1px;
 }
