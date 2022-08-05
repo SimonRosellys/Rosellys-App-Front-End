@@ -103,3 +103,29 @@ body {
   margin-bottom: 1px;
   margin-top: 1px;
 }
+
+.add-show {
+  border: 1px solid #ff0000;
+  text-align: center;
+}
+
+.add-show-form {
+  margin: 10px;
+}
+
+.add-show-form-field {
+  margin: 1px;
+}
+
+.add-song {
+  border: 1px solid #ff0000;
+  text-align: center;
+}
+
+.add-song-form {
+  margin: 10px;
+}
+
+.add-song-form-field {
+  margin: 1px;
+}

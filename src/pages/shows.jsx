@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getShows } from "../utils/api";
 // import { Link } from "react-router-dom";
 import SingleShow from "../components/single-show";
+import AddNewShow from "../components/add-show";
 
 const Shows = () => {
   const [shows, setShows] = useState([]);
@@ -18,7 +19,7 @@ const Shows = () => {
 
   return (
     <section>
-      <h1 className="dev">Add a show button here</h1>
+      <AddNewShow />
       <nav>
         <h1 className="list-title">List of Rosellys Shows</h1>
         {shows.map((show) => {

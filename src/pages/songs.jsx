@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getSongs } from "../utils/api";
 import SingleSong from "../components/single-song";
+import AddNewSong from "../components/add-song";
 
 const Songs = () => {
   const [songs, setSongs] = useState([]);
@@ -17,15 +18,13 @@ const Songs = () => {
 
   return (
     <section>
+      <AddNewSong />
       <nav>
         <div>
           <h1 className="list-title">List of Rosellys Songs</h1>
-          <h4 className="list-title">Click song title for more info</h4>
-          <p className="dev">Add song button here </p>
         </div>
 
         {songs.map((song) => {
-          // console.log(song);
           return (
             <div className="song-list-items" key={song.song_id}>
               <div>

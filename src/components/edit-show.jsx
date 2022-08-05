@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { getSingleShow } from "../utils/api";
+import { editShow } from "../utils/api";
 import Moment from "moment";
-import EditShow from "./edit-show";
 
-function SingleShow({ id }) {
+function EditShow({ id }) {
   const [show, setShow] = useState([]);
   const [isShown, setIsShown] = useState(false);
 
@@ -11,6 +10,7 @@ function SingleShow({ id }) {
 
   const handleShowMore = (event) => {
     setIsShown((current) => !current);
+    // setIsShown(true);
   };
 
   function onToYes(onOrOff) {
@@ -20,22 +20,20 @@ function SingleShow({ id }) {
     return onOrOff;
   }
 
+  const formatDate = Moment(show.show_date).format("ddd Do MMM YYYY");
+
   useEffect(() => {
-    getSingleShow(id).then((show) => {
+    editShow(id).then((show) => {
       setShow(show[0]);
 
       // setIsLoading(false);
     });
   }, [id]);
 
-  const formatDate = Moment(show.show_date).format("ddd Do MMM YYYY");
-
   return (
     <section>
       <div>
-        <h1 onClick={() => handleShowMore()}>
-          {show.venue_name}: {formatDate} : {show.show_id}
-        </h1>
+        <h1 onClick={() => handleShowMore()}>{show.title}</h1>
       </div>
       {isShown && (
         <div>
@@ -52,12 +50,10 @@ function SingleShow({ id }) {
           <p>Band Paid? {onToYes(show.paid_out)}</p>
           <p>Contact Details: {show.contact_details}</p>
           <p>Additional Notes: {show.notes}</p>
-          {/* <p>Show ID: {show.show_id}</p> */}
-          <EditShow />
         </div>
       )}
     </section>
   );
 }
 
-export default SingleShow;
+export default EditShow;

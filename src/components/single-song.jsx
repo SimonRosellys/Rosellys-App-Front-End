@@ -31,6 +31,7 @@ function SingleSong({ id }) {
           <p>Composer: {song.composer}</p>
           <p>Instrumentation: {song.instrumentation}</p>
           <p>Lyrics: {song.lyrics}</p>
+          <p>Notes: {song.notes}</p>
           <p className="dev">Edit song button here </p>
         </div>
       )}
