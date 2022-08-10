@@ -28,6 +28,7 @@ export const addShow = (show) => {
     });
 };
 
+// Try PUT instead of PATCH???
 export const editShow = (id, changes) => {
   return rosellysApi
     .patch(`/shows/${id}`, changes, {

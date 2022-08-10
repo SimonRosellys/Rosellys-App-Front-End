@@ -33,12 +33,13 @@ function SingleShow({ id }) {
   return (
     <section>
       <div>
-        <h1 onClick={() => handleShowMore()}>
-          {show.venue_name}: {formatDate} : {show.show_id}
-        </h1>
+        <h5 onClick={() => handleShowMore()}>
+          {show.venue_name}: {formatDate}
+        </h5>
       </div>
       {isShown && (
         <div>
+          <EditShow show={show} />
           <p>Address: {show.venue_address}</p>
           <p>Date: {formatDate}</p>
           <p>Soundcheck: {show.soundcheck_time}</p>
@@ -53,7 +54,6 @@ function SingleShow({ id }) {
           <p>Contact Details: {show.contact_details}</p>
           <p>Additional Notes: {show.notes}</p>
           {/* <p>Show ID: {show.show_id}</p> */}
-          <EditShow />
         </div>
       )}
     </section>
