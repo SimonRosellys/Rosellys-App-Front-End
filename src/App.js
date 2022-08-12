@@ -23,9 +23,9 @@ function App() {
     case "/songs":
       Component = Songs;
       break;
-    case "/create-setlist":
-      Component = CreateSetlist;
-      break;
+    // case "/create-setlist":
+    //   Component = CreateSetlist;
+    //   break;
   }
   return (
     <>
