@@ -11,9 +11,9 @@ export default function Navbar() {
         <li>
           <a href="/shows">Shows</a>
         </li>
-        {/* <li>
+        <li>
           <a href="/set-lists">Set Lists</a>
-        </li> */}
+        </li>
         <li>
           <a href="/songs">Songs</a>
         </li>

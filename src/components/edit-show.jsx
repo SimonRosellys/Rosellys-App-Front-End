@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { editShow } from "../utils/api";
 import Moment from "moment";
-import { useEffect } from "react";
 
 function EditShow(showToEdit) {
   const [show, setShow] = useState(showToEdit); // TODO: refactor this by directly assigning showToEdit where needed as setShow is not used
@@ -32,16 +31,21 @@ function EditShow(showToEdit) {
     // if one of the checkboxes -  flip the answer.
     // FIXME: THIS IS NOT WORKING YET!!!!!!!!!!!!!!!!
     let { name, value } = e.target;
-    if (name == "confirmed" || name === "paid_in" || name === "paid_out") {
+    if (name === "confirmed" || name === "paid_in" || name === "paid_out") {
       if (value === "No") {
         setNewShow((prev) => {
+          // let test = { ...prev, [name]: "Yes" };
+          // console.log(test);
           return { ...prev, [name]: "Yes" }; // THIS IS NOT CHANGING IT TO YES
         });
       } else if (value === "Yes") {
         setNewShow((prev) => {
+          // let test2 = { ...prev, [name]: "No" };
+          // console.log(test2);
           return { ...prev, [name]: "No" }; // THIS IS NOT CHANGING IT TO NO
         });
       }
+      console.log(newShow);
     }
     setNewShow((prev) => {
       return { ...prev, [name]: value };
@@ -57,10 +61,9 @@ function EditShow(showToEdit) {
         return { ...prev, [name]: value };
       });
     }
-    console.log(newShow);
-    e.preventDefault(); // TODO: remove this when doe to rerender.
+    // e.preventDefault(); // TODO: remove this when done to rerender.
     // newShow is good to go, except for the checkboxes. need to make sure it'll pass through and the back end can handle it
-    // editShow(newShow);
+    editShow(show.show.show_id, newShow);
   };
 
   const formatDate = Moment(show.show.show_date).format("YYYY-MM-DD");
@@ -69,7 +72,7 @@ function EditShow(showToEdit) {
     <section>
       <h4 onClick={() => handleShowMore()}>Edit this show</h4>
       {isShown && (
-        <div>
+        <div className="dev-box">
           <form className="add-show-form" onSubmit={handleSubmit}>
             <h6 className="add-show-form-field">Venue Name :</h6>{" "}
             <input
@@ -175,10 +178,20 @@ function EditShow(showToEdit) {
             />
             <button type="submit">Update Show</button>
           </form>
+
+          <button
+            onClick={() =>
+              window.open(
+                "http://localhost:3000/create-setlist",
+                "noopener,noreferrer"
+              )
+            }
+          >
+            Create a set list
+          </button>
         </div>
       )}
     </section>
   );
 }
-
 export default EditShow;

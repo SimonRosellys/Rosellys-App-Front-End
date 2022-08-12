@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { getShows } from "../utils/api";
-// import { Link } from "react-router-dom";
 import SingleShow from "../components/single-show";
 import AddNewShow from "../components/add-show";
 

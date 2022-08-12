@@ -32,8 +32,7 @@ function AddNewShow() {
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // console.log(newShow);
+    e.preventDefault();
     addShow(newShow);
   };
 

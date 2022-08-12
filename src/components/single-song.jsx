@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getSingleSong } from "../utils/api";
+import EditSong from "./edit-song";
 
 function SingleSong({ id }) {
   const [song, setSong] = useState([]);
@@ -32,7 +33,7 @@ function SingleSong({ id }) {
           <p>Instrumentation: {song.instrumentation}</p>
           <p>Lyrics: {song.lyrics}</p>
           <p>Notes: {song.notes}</p>
-          <p className="dev">Edit song button here </p>
+          <EditSong song={song} />
         </div>
       )}
     </section>

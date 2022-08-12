@@ -28,10 +28,9 @@ export const addShow = (show) => {
     });
 };
 
-// Try PUT instead of PATCH???
-export const editShow = (id, changes) => {
+export const editShow = (id, newShow) => {
   return rosellysApi
-    .patch(`/shows/${id}`, changes, {
+    .put(`/shows/${id}`, newShow, {
       headers: { "Content-Type": "application/json" },
     })
     .then(({ data }) => {
@@ -57,4 +56,27 @@ export const addSong = (song) => {
     .then(({ data }) => {
       return data;
     });
+};
+
+export const editSong = (id, newSong) => {
+  return rosellysApi
+    .put(`/songs/${id}`, newSong, {
+      headers: { "Content-Type": "application/json" },
+    })
+    .then(({ data }) => {
+      return data;
+    });
+};
+
+//SET LISTS
+
+export const getSetlists = async () => {
+  const { data } = await rosellysApi.get("/set-lists");
+  return data;
+};
+
+export const getSingleSetlist = async (id) => {
+  const { data } = await rosellysApi.get(`/set-lists/${id}`);
+  // console.log(data[0].setlist_id);
+  return data;
 };
