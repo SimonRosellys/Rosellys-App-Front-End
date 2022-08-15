@@ -4,7 +4,7 @@ import Shows from "./pages/shows";
 import Set_Lists from "./pages/set-lists";
 import Home from "./pages/home";
 import Songs from "./pages/songs";
-import CreateSetlist from "./pages/create-setlist";
+import CreateSetlist from "./components/create-setlist";
 import "./App.css";
 import "./styles.css";
 

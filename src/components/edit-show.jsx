@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { editShow } from "../utils/api";
-import CreateSetlist from "../pages/create-setlist";
 import Moment from "moment";
 
 function EditShow(showToEdit) {
@@ -179,9 +178,6 @@ function EditShow(showToEdit) {
             />
             <button type="submit">Update Show</button>
           </form>
-          <div>
-            <CreateSetlist show_id={show.show.show_id} />
-          </div>
         </div>
       )}
     </section>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getSingleSong } from "../utils/api";
 import EditSong from "./edit-song";
+import Popup from "reactjs-popup";
 
 function SingleSong({ id }) {
   const [song, setSong] = useState([]);
@@ -22,11 +23,8 @@ function SingleSong({ id }) {
   }, [id]);
 
   return (
-    <section>
-      <div>
-        <h1 onClick={() => handleShowMore()}>{song.title}</h1>
-      </div>
-      {isShown && (
+    <section className="dev-box">
+      <Popup trigger={<h4>{song.title}</h4>} position="bottom center">
         <div>
           <p>Key: {song.song_key}</p>
           <p>Composer: {song.composer}</p>
@@ -35,7 +33,7 @@ function SingleSong({ id }) {
           <p>Notes: {song.notes}</p>
           <EditSong song={song} />
         </div>
-      )}
+      </Popup>{" "}
     </section>
   );
 }

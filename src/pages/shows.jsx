@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getShows } from "../utils/api";
 import SingleShow from "../components/single-show";
 import AddNewShow from "../components/add-show";
+import Popup from "reactjs-popup";
 
 const Shows = () => {
   const [shows, setShows] = useState([]);
@@ -24,9 +25,14 @@ const Shows = () => {
         {shows.map((show) => {
           return (
             <div className="show-list-items" key={show.show_id}>
-              <div>
-                <SingleShow id={show.show_id} />
-              </div>
+              <Popup
+                trigger={<h4>{show.venue_name}</h4>}
+                position="bottom center"
+              >
+                <div className="modal-content">
+                  <SingleShow id={show.show_id} />
+                </div>
+              </Popup>
             </div>
           );
         })}

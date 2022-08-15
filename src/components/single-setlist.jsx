@@ -1,23 +1,36 @@
 import React, { useState, useEffect } from "react";
-import { getSingleSetlist, getSingleShow } from "../utils/api";
+import { getSingleSetlist, getSingleShow, getSongs } from "../utils/api";
+import Popup from "reactjs-popup";
 
 function SingleSetlist({ id }) {
   const [setlist, setSetlist] = useState([]);
   const [isShown, setIsShown] = useState(false);
   const [show, setShow] = useState();
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [songs, setSongs] = useState([]);
+  const [isSongsLoading, setSongsIsLoading] = useState(true);
+
+  useEffect(() => {
+    getSetlistAndShowData(id);
+  }, []);
+
+  useEffect(() => {
+    getSongs().then((songs) => {
+      setSongs(songs);
+      setSongsIsLoading(false);
+    });
+  }, []);
+
+  if (isSongsLoading)
+    return <p>Don't have a cow man, your songs are on the way</p>;
 
   async function getSetlistAndShowData(id) {
     const list = await getSingleSetlist(id);
     setSetlist(list[0]);
     const show = await getSingleShow(list[0].show_id);
     setShow(show[0]);
-    setLoading(false);
+    setIsLoading(false);
   }
-  // IT'S STILL RENDERING BEFORE THE ABOVE AWAITS HAVE HAD TIME TO RESOLVE.
-  useEffect(() => {
-    getSetlistAndShowData(id);
-  }, []);
 
   const handleShowMore = (event) => {
     setIsShown((current) => !current);
@@ -28,18 +41,15 @@ function SingleSetlist({ id }) {
   }
   return (
     <section>
-      <div>
-        <h5 onClick={() => handleShowMore()}>{show.venue_name}</h5>
-      </div>
-      {isShown && (
-        <div>
-          {/* <EditSetlist list={list} /> */}
-          <p>setlist_id: {setlist.setlist_id}</p>
-          <p>Venue: {show.venue_name}</p>
-          {/* <p>Show: {setlist.show_id}</p> */}
-          <p>list_array: {setlist.list_array}</p>
+      <Popup trigger={<h4>{show.venue_name}</h4>} position="bottom center">
+        <div className="modal-content">
+          {/* <p>setlist_id: {setlist.setlist_id}</p> */}
+          {/* <p>Set List Name: {show.venue_name}</p> */}
+          {setlist.list_array.map((song) => {
+            return <div key={song}>{songs[song].title}</div>;
+          })}
         </div>
-      )}
+      </Popup>
     </section>
   );
 }
