@@ -174,3 +174,27 @@ body {
   border: 1px solid #cfcece;
 }
 /* POPUP ************************************************************ */
+
+/* Drag and Drop ************************************************************ */
+.dnd-body {
+  margin: 0;
+}
+
+.dnd-container {
+  background-color: #333;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.dnd-draggable {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid black;
+  cursor: move;
+}
+
+.dnd-draggable.dragging {
+  opacity: 0.5;
+}
+
+/* Drag and Drop ************************************************************ */
