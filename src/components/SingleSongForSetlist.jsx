@@ -14,8 +14,6 @@ function SingleSong({ id }) {
 
   const handleAddToList = (song_id) => {
     setIsSelected((current) => !current);
-    // setSetlist([...setlist].concat(song_id));
-    // SetlistCollector(song_id);
   };
 
   let select;

@@ -17,7 +17,7 @@ function Set_Lists() {
 
   return (
     <section>
-      <CreateSetlist />
+      <a href="/create-setlist">Click here to create a new set list</a>
       <nav>
         <h1 className="list-title">List of Rosellys Set Lists</h1>
         {setlists.map((list) => {

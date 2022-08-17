@@ -32,6 +32,7 @@ const CreateSetlist = (show_id) => {
   const handleOrderList = () => {
     console.log("here are the songs to be ordered", setlist);
   };
+  // console.log(setlist);
 
   useEffect(() => {
     getSongs().then((songs) => {
@@ -42,42 +43,42 @@ const CreateSetlist = (show_id) => {
 
   if (isLoading) return <p>Don't have a cow man, your songs are on the way</p>;
 
-  return (
-    <section>
-      <Popup
-        trigger={
-          <h4 className="dev-box" onClick={() => handleShowMore()}>
-            Create a set list
-          </h4>
-        }
-        position="bottom center"
-      >
-        <div>
-          {/* <h4 className="dev-box" onClick={() => handleOrderList()}>
-            Save and re-order selected songs
-          </h4> */}
-          <OrderSetlist unorderedSetlist={setlist} />
-          {songs.map((song) => {
-            return (
-              <div className="song-list-items" key={song.song_id}>
-                <div
-                  onClick={() => {
-                    handleAddToList(song.song_id);
-                  }}
-                >
-                  <SingleSongForSetlist
-                    id={song.song_id}
-                    // onClick={() => handleAddToList(song.song_id)}
-                  />
-                </div>
-                {song.instrumentation}
-              </div>
-            );
-          })}
-        </div>
-      </Popup>
-    </section>
-  );
+  return <section> drag and drop needs to go here</section>;
 };
 
 export default CreateSetlist;
+
+// <section>
+//       <Popup
+//         trigger={
+//           <h4 className="dev-box" onClick={() => handleShowMore()}>
+//             Create a set list
+//           </h4>
+//         }
+//         position="bottom center"
+//       >
+//         <div>
+//           {/* <h4 className="dev-box" onClick={() => handleOrderList()}>
+//             Save and re-order selected songs
+//           </h4> */}
+//           {/* <OrderSetlist unorderedSetlist={setlist} /> */}
+//           {songs.map((song) => {
+//             return (
+//               <div className="song-list-items" key={song.song_id}>
+//                 <div
+//                   onClick={() => {
+//                     handleAddToList(song.song_id);
+//                   }}
+//                 >
+//                   <SingleSongForSetlist
+//                     id={song.song_id}
+//                     // onClick={() => handleAddToList(song.song_id)}
+//                   />
+//                 </div>
+//                 {song.instrumentation}
+//               </div>
+//             );
+//           })}
+//         </div>
+//       </Popup>
+//     </section>

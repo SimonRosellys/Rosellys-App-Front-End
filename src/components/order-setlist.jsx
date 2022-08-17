@@ -11,22 +11,11 @@ function OrderSetlist(unorderedSetlist) {
     setIsShown((current) => !current);
   };
 
+  console.log("here", unorderedSetlist);
+
   return (
-    <section onClick={() => handleShowMore()}>
-      <h4 className="dev-box" onClick={() => handleShowMore()}>
-        This is the component that will reorder the list and allow to save
-      </h4>
-      {isShown && <div>test</div>}
-
-      {/* <Popup trigger={<button> Trigger</button>} position="right center">
-        <div>Popup content here !!</div>
-      </Popup> */}
-
-      {
-        /* map setlist here to render current setOrderedList
-      make reorderable react-beautiful */
-        // https://www.youtube.com/watch?v=y1w6C9A5a2A
-      }
+    <section>
+      <h1>test</h1>
     </section>
   );
 }
