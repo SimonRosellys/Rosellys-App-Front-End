@@ -77,14 +77,14 @@ const CreateSetlist = (show_id) => {
 
   return (
     <section>
-      {" "}
       <div className="dnd-container">
-        <p className="dnd-draggable" draggable="true">
-          1
-        </p>
-        <p className="dnd-draggable" draggable="true">
-          2
-        </p>
+        {songs.map((song) => {
+          return (
+            <p className="dnd-draggable" draggable="true" key={song.song_id}>
+              {song.title}
+            </p>
+          );
+        })}
       </div>
       <div className="dnd-container">
         <p className="dnd-draggable" draggable="true">
@@ -178,7 +178,7 @@ export default CreateSetlist;
 //             );
 //           })}
 //         </div>
-//       </Popup>
+//
 //     </section>
 //   );
 // };
