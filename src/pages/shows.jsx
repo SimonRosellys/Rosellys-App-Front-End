@@ -3,6 +3,7 @@ import { getShows } from "../utils/api";
 import SingleShow from "../components/single-show";
 import AddNewShow from "../components/add-show";
 import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 const Shows = () => {
   const [shows, setShows] = useState([]);
