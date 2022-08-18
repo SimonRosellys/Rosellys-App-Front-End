@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getSongs } from "../utils/api";
-import { DndProvider } from "react-dnd";
+import { DndProvider, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
 const CreateSetlist = (show_id) => {
@@ -26,6 +26,7 @@ const CreateSetlist = (show_id) => {
     } else {
       setSetlist([...setlist.concat(songName)]); // add
     }
+    // console.log("set list => ", setlist); THIS IS WORKING TO HERE, BUT WITH THE ONG NAME, NOT THE SONG_ID
   };
 
   useEffect(() => {
@@ -87,10 +88,6 @@ const CreateSetlist = (show_id) => {
       { offset: Number.NEGATIVE_INFINITY }
     ).element;
   }
-
-  document.addEventListener("dragend", (e) => {
-    console.log(e);
-  });
 
   return (
     <section>
