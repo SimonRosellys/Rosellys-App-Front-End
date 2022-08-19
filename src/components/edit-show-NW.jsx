@@ -21,15 +21,15 @@ function EditShow(showToEdit) {
     contact_details: show.show.contact_details,
     notes: show.show.notes,
   });
+
   // const [isLoading, setIsLoading] = useState(true);
-  console.log("showToEdit", showToEdit);
 
   const handleShowMore = () => {
     setIsShown((current) => !current);
   };
 
   const handleChange = (e) => {
-    // if one of the checkboxes is checked-  flip the answer.
+    // if one of the checkboxes -  flip the answer.
     // FIXME: THIS IS NOT WORKING YET!!!!!!!!!!!!!!!!
     let { name, value } = e.target;
     if (name === "confirmed" || name === "paid_in" || name === "paid_out") {
@@ -46,6 +46,7 @@ function EditShow(showToEdit) {
           return { ...prev, [name]: "No" }; // THIS IS NOT CHANGING IT TO NO
         });
       }
+      console.log(newShow);
     }
     setNewShow((prev) => {
       return { ...prev, [name]: value };
@@ -53,14 +54,6 @@ function EditShow(showToEdit) {
     return newShow;
   };
 
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  // TRY HERE forEach INSTEAD OF LET I....
   const handleSubmit = (e) => {
     for (let i = 0; i < 15; i++) {
       // FIXME: This is the current number of fields (14) and will need to be updated or made dynamic if further fields are added
@@ -70,11 +63,11 @@ function EditShow(showToEdit) {
       });
     }
     // e.preventDefault(); // TODO: remove this when done to rerender.
-    // newShow is good to go, except for the checkboxes.
-    editShow(showToEdit.show.show_id, newShow);
+    // newShow is good to go, except for the checkboxes. need to make sure it'll pass through and the back end can handle it
+    editShow(show.show.show_id, newShow);
   };
 
-  const formatDate = Moment(showToEdit.show.show_date).format("YYYY-MM-DD");
+  const formatDate = Moment(show.show.show_date).format("YYYY-MM-DD");
 
   return (
     <section>
@@ -87,21 +80,21 @@ function EditShow(showToEdit) {
               required
               type="text"
               name="venue_name"
-              defaultValue={showToEdit.show.venue_name}
+              defaultValue={show.show.venue_name}
               onChange={handleChange}
             />
             <h6 className="add-show-form-field">Venue Address :</h6>{" "}
             <input
               type="text"
               name="venue_address"
-              defaultValue={showToEdit.show.venue_address}
+              defaultValue={show.show.venue_address}
               onChange={handleChange}
             />
             <h6 className="add-show-form-field">Show Date :</h6>
             <input
               required
               type="date"
-              name="show_date"
+              name="show_date" // is this a problem?????
               defaultValue={formatDate}
               onChange={handleChange}
             />
@@ -109,28 +102,28 @@ function EditShow(showToEdit) {
             <input
               type="time"
               name="soundcheck_time"
-              defaultValue={showToEdit.show.soundcheck_time}
+              defaultValue={show.show.soundcheck_time}
               onChange={handleChange}
             />
             <h6 className="add-show-form-field">Show Start Time :</h6>{" "}
             <input
               type="time"
               name="set_start_time"
-              defaultValue={showToEdit.show.set_start_time}
+              defaultValue={show.show.set_start_time}
               onChange={handleChange}
             />
             <h6 className="add-show-form-field">Venue Website :</h6>{" "}
             <input
               type="text"
               name="venue_website"
-              defaultValue={showToEdit.show.venue_website}
+              defaultValue={show.show.venue_website}
               onChange={handleChange}
             />
             <h6 className="add-show-form-field">Line Up :</h6>{" "}
             <input
               type="text"
               name="line_up"
-              defaultValue={showToEdit.show.line_up}
+              defaultValue={show.show.line_up}
               onChange={handleChange}
             />
             <h6 required className="add-show-form-field">
@@ -139,64 +132,53 @@ function EditShow(showToEdit) {
             <input
               type="checkbox"
               name="confirmed"
-              defaultValue={showToEdit.show.confirmed}
+              defaultValue={show.show.confirmed}
               onChange={handleChange}
             />{" "}
             <h6 className="add-show-form-field">Player Availability :</h6>{" "}
             <input
               type="text"
               name="player_availability"
-              defaultValue={showToEdit.show.player_availability}
+              defaultValue={show.show.player_availability}
               onChange={handleChange}
             />
             <h6 className="add-show-form-field">Fee :</h6>
             <input
               type="int"
               name="fee"
-              defaultValue={showToEdit.show.fee}
+              defaultValue={show.show.fee}
               onChange={handleChange}
             />{" "}
             <h6 className="add-show-form-field">Paid in? :</h6>{" "}
             <input
               type="checkbox"
               name="paid_in"
-              defaultValue={showToEdit.show.paid_in}
+              defaultValue={show.show.paid_in}
               onChange={handleChange}
             />
             <h6 className="add-show-form-field">Paid out?:</h6>{" "}
             <input
               type="checkbox"
               name="paid_out"
-              defaultValue={showToEdit.show.paid_out}
+              defaultValue={show.show.paid_out}
               onChange={handleChange}
             />{" "}
             <h6 className="add-show-form-field">Contact Details :</h6>{" "}
             <input
               type="text"
               name="contact_details"
-              defaultValue={showToEdit.show.contact_details}
+              defaultValue={show.show.contact_details}
               onChange={handleChange}
             />
             <h6 className="add-show-form-field">Venue Notes :</h6>{" "}
             <input
               type="text"
               name="notes"
-              defaultValue={showToEdit.show.notes}
+              defaultValue={show.show.notes}
               onChange={handleChange}
             />
             <button type="submit">Update Show</button>
           </form>
-
-          <button
-            onClick={() =>
-              window.open(
-                "http://localhost:3000/create-setlist",
-                "noopener,noreferrer"
-              )
-            }
-          >
-            Create a set list
-          </button>
         </div>
       )}
     </section>

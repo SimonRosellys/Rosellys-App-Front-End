@@ -29,10 +29,12 @@ function SingleShow({ id }) {
   }, [id]);
 
   const formatDate = Moment(show.show_date).format("ddd Do MMM YYYY");
+  // console.log(show.venue_address);
 
   return (
     <section>
       <div>
+        <EditShow show={show} />
         <p>Address: {show.venue_address}</p>
         <p>Date: {formatDate}</p>
         <p>Soundcheck: {show.soundcheck_time}</p>
@@ -48,7 +50,6 @@ function SingleShow({ id }) {
         <p>Additional Notes: {show.notes}</p>
         {/* <p>Show ID: {show.show_id}</p> */}
         {/* TODO: add set list view/add here */}
-        <EditShow show={show} />
       </div>
     </section>
   );
