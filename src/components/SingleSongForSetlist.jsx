@@ -3,9 +3,7 @@ import { getSingleSong } from "../utils/api";
 
 function SingleSong({ id }) {
   const [song, setSong] = useState([]);
-  const [setlist, setSetlist] = useState([]);
   const [isSelected, setIsSelected] = useState(false);
-  const [count, setCount] = useState(0);
   useEffect(() => {
     getSingleSong(id).then((song) => {
       setSong(song[0]);

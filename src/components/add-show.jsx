@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { addShow } from "../utils/api";
 
 function AddNewShow() {
@@ -20,7 +20,7 @@ function AddNewShow() {
     notes: "",
   });
 
-  const handleShowMore = (event) => {
+  const handleShowMore = (e) => {
     setIsShown((current) => !current);
   };
 
@@ -32,7 +32,6 @@ function AddNewShow() {
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
     addShow(newShow);
   };
 
@@ -92,7 +91,6 @@ function AddNewShow() {
             <input type="text" name="notes" onChange={handleChange} />
             <button type="submit">Add Show</button>
           </form>
-          {/* {isError && <p className="err-msg">Something went wrong :(</p>} */}
         </div>
       )}
     </section>

@@ -5,18 +5,19 @@ const rosellysApi = axios.create({
 });
 
 //SHOWS
+
 export const getShows = async () => {
   const { data } = await rosellysApi.get("/shows");
   return data;
 };
 
+// TODO: NOT YET IMPLEMENTED
 // export const deleteShow = async (id) => {
 //   const { data } = await rosellysApi.delete(`/shows/${id}`);
 // };
 
 export const getSingleShow = async (id) => {
   const { data } = await rosellysApi.get(`/shows/${id}`);
-  // console.log(data[0].venue_name);
   return data;
 };
 
@@ -39,6 +40,7 @@ export const editShow = (id, newShow) => {
 };
 
 //SONGS
+
 export const getSongs = async () => {
   const { data } = await rosellysApi.get("/songs");
   return data;
@@ -46,7 +48,6 @@ export const getSongs = async () => {
 
 export const getSingleSong = async (id) => {
   const { data } = await rosellysApi.get(`/songs/${id}`);
-  // console.log(data[0].venue_name);
   return data;
 };
 
@@ -77,6 +78,5 @@ export const getSetlists = async () => {
 
 export const getSingleSetlist = async (id) => {
   const { data } = await rosellysApi.get(`/set-lists/${id}`);
-  // console.log(data[0].setlist_id);
   return data;
 };

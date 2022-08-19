@@ -14,7 +14,7 @@ function EditSong(songToEdit) {
     // album: show.show.line_up,
   });
   // const [isLoading, setIsLoading] = useState(true);
-  console.log(song);
+  // console.log(song);
 
   const handleShowMore = () => {
     setIsShown((current) => !current);

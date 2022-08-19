@@ -50,7 +50,6 @@ const CreateSetlist = (show_id) => {
     draggable.addEventListener("dragend", (e) => {
       let songName = draggable.innerHTML;
       handleAddToList(songName);
-      // path[0].__reactFiber$k09fyn7en08.index
       //TODO: pass the song index through here!!!!!!!!!!!!
       draggable.classList.remove("dragging");
     });

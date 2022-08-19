@@ -21,15 +21,13 @@ function EditShow(showToEdit) {
     contact_details: show.show.contact_details,
     notes: show.show.notes,
   });
-  // const [isLoading, setIsLoading] = useState(true);
-  console.log("showToEdit", showToEdit);
 
   const handleShowMore = () => {
     setIsShown((current) => !current);
   };
 
   const handleChange = (e) => {
-    // if one of the checkboxes is checked-  flip the answer.
+    // if one of the checkboxes is checked,  flip the answer.
     // FIXME: THIS IS NOT WORKING YET!!!!!!!!!!!!!!!!
     let { name, value } = e.target;
     if (name === "confirmed" || name === "paid_in" || name === "paid_out") {
@@ -53,17 +51,10 @@ function EditShow(showToEdit) {
     return newShow;
   };
 
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  //********************************************************************************************************************************** */
-  // TRY HERE forEach INSTEAD OF LET I....
   const handleSubmit = (e) => {
     for (let i = 0; i < 15; i++) {
       // FIXME: This is the current number of fields (14) and will need to be updated or made dynamic if further fields are added
+      console.log(e.target);
       const { name, value } = e.target[i];
       setNewShow((prev) => {
         return { ...prev, [name]: value };

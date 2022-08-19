@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import addSong from api
 import { addSong } from "../utils/api";
 
 function AddNewSong() {
@@ -25,7 +24,6 @@ function AddNewSong() {
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
     console.log(newSong);
     addSong(newSong);
   };
@@ -58,7 +56,6 @@ function AddNewSong() {
             <input type="text" name="notes" onChange={handleChange} />
             <button type="submit">Add Show</button>
           </form>
-          {/* {isError && <p className="err-msg">Something went wrong :(</p>} */}
         </div>
       )}
     </section>

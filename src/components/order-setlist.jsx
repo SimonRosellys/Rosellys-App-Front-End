@@ -3,7 +3,6 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
 function OrderSetlist(unorderedSetlist) {
-  // console.log("order-list invoked", unorderedSetlist);
   const [orderedList, setOrderedList] = useState(unorderedSetlist);
   const [isShown, setIsShown] = useState(false);
 

@@ -7,7 +7,6 @@ function SingleShow({ id }) {
   const [show, setShow] = useState([]);
   const [isShown, setIsShown] = useState(false);
 
-  // const [isLoading, setIsLoading] = useState(true);
 
   const handleShowMore = (event) => {
     setIsShown((current) => !current);
@@ -24,12 +23,10 @@ function SingleShow({ id }) {
     getSingleShow(id).then((show) => {
       setShow(show[0]);
 
-      // setIsLoading(false);
     });
   }, [id]);
 
   const formatDate = Moment(show.show_date).format("ddd Do MMM YYYY");
-  // console.log(show.venue_address);
 
   return (
     <section>

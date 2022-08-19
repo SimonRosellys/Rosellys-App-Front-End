@@ -9,11 +9,9 @@ function Set_Lists() {
   useEffect(() => {
     getSetlists().then((lists) => {
       setSetlists(lists);
-      // setIsLoading(false);
     });
   }, []);
 
-  // console.log(setlists);
 
   return (
     <section>

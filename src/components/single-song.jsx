@@ -7,18 +7,15 @@ function SingleSong({ id }) {
   const [song, setSong] = useState([]);
   const [isShown, setIsShown] = useState(false);
 
-  // const [isLoading, setIsLoading] = useState(true);
 
   const handleShowMore = (event) => {
     setIsShown((current) => !current);
-    // setIsShown(true);
   };
 
   useEffect(() => {
     getSingleSong(id).then((song) => {
       setSong(song[0]);
 
-      // setIsLoading(false);
     });
   }, [id]);
 
