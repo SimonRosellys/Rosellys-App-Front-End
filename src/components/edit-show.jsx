@@ -22,6 +22,7 @@ function EditShow(showToEdit) {
     notes: show.show.notes,
   });
   // const [isLoading, setIsLoading] = useState(true);
+  console.log(show);
 
   const handleShowMore = () => {
     setIsShown((current) => !current);
@@ -45,7 +46,7 @@ function EditShow(showToEdit) {
           return { ...prev, [name]: "No" }; // THIS IS NOT CHANGING IT TO NO
         });
       }
-      console.log(newShow);
+      // console.log(newShow);
     }
     setNewShow((prev) => {
       return { ...prev, [name]: value };
@@ -55,7 +56,7 @@ function EditShow(showToEdit) {
 
   const handleSubmit = (e) => {
     for (let i = 0; i < 15; i++) {
-      // FIXME: This is the current number of fields (14) and will need to be updated or made dynamic if further fields are added
+      // FIXME: CHANGE TO forEach This is the current number of fields (14) and will need to be updated or made dynamic if further fields are added
       const { name, value } = e.target[i];
       setNewShow((prev) => {
         return { ...prev, [name]: value };
@@ -67,7 +68,7 @@ function EditShow(showToEdit) {
   };
 
   const formatDate = Moment(show.show.show_date).format("YYYY-MM-DD");
-
+  // console.log(newShow);
   return (
     <section>
       <h4 onClick={() => handleShowMore()}>Edit this show</h4>

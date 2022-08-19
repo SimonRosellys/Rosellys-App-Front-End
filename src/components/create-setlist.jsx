@@ -1,33 +1,22 @@
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
 import React, { useState, useEffect } from "react";
 import { getSongs } from "../utils/api";
-import { DndProvider, useDrop } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import SongCard from "./dnd-card";
 
-const CreateSetlist = (show_id) => {
+const CreateSetlist = () => {
   const [songs, setSongs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [setlist, setSetlist] = useState([]);
 
-  // const handleAddToList = () => {
-  //   {
-  //     console.log(" Added to list function called");
-  //   }
-  // };
-
-  const handleAddToList = (songName) => {
-    if (setlist.includes(songName)) {
-      //
-      const index = setlist.indexOf(songName);
-      if (index > -1) {
-        let remainingList = setlist.splice(index, 1);
-        setSetlist(setlist);
-      }
-      //
-    } else {
-      setSetlist([...setlist.concat(songName)]); // add
-    }
-    // console.log("set list => ", setlist); THIS IS WORKING TO HERE, BUT WITH THE ONG NAME, NOT THE SONG_ID
-  };
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
 
   useEffect(() => {
     getSongs().then((songs) => {
@@ -36,83 +25,43 @@ const CreateSetlist = (show_id) => {
     });
   }, []);
 
-  if (isLoading) return <p>Don't have a cow man, your songs are on the way</p>;
-
-  const draggables = document.querySelectorAll(".dnd-draggable");
-  const containers = document.querySelectorAll(
-    ".dnd-container-left, .dnd-container-right"
-  );
-
-  draggables.forEach((draggable) => {
-    draggable.addEventListener("dragstart", () => {
-      draggable.classList.add("dragging");
-    });
-
-    draggable.addEventListener("dragend", (e) => {
-      let songName = draggable.innerHTML;
-      handleAddToList(songName);
-      // path[0].__reactFiber$k09fyn7en08.index
-      //TODO: pass the song index through here!!!!!!!!!!!!
-      draggable.classList.remove("dragging");
-    });
-  });
-
-  containers.forEach((container) => {
-    container.addEventListener("dragover", (e) => {
-      e.preventDefault();
-      const afterElement = getDragAfterElement(container, e.clientY);
-      const draggable = document.querySelector(".dragging");
-      if (afterElement == null) {
-        container.appendChild(draggable);
-      } else {
-        container.insertBefore(draggable, afterElement);
-      }
-    });
-  });
-
-  function getDragAfterElement(container, y) {
-    const draggableElements = [
-      ...container.querySelectorAll(".dnd-draggable:not(.dragging)"),
-    ];
-
-    return draggableElements.reduce(
-      (closest, child) => {
-        const box = child.getBoundingClientRect();
-        const offset = y - box.top - box.height / 2;
-        if (offset < 0 && offset > closest.offset) {
-          return { offset: offset, element: child };
-        } else {
-          return closest;
-        }
-      },
-      { offset: Number.NEGATIVE_INFINITY }
-    ).element;
-  }
-
   return (
-    <section>
-      <DndProvider backend={HTML5Backend}>
-        <div className="dnd-container-left">
-          <p>songs to choose from</p>
-          {songs.map((song) => {
-            return (
-              <div
-                className="dnd-draggable"
-                draggable="true"
-                value={song.song_id}
-                key={song.song_id}
-              >
-                {song.title}
-              </div>
-            );
-          })}
-        </div>
-        <div className="dnd-container-right">
-          <p>chosen songs</p>
-        </div>
-      </DndProvider>
-    </section>
+    <Grid container margin={2}>
+      <SongCard />
+      <Grid item xs={4}>
+        <Item>Set List</Item>
+      </Grid>
+    </Grid>
   );
 };
 
 export default CreateSetlist;
+
+// import { DndProvider, useDrag, useDrop } from "react-dnd";
+// import { HTML5Backend } from "react-dnd-html5-backend";
+
+// const CreateSetlist = (show_id) => {
+
+//   const [setlist, setSetlist] = useState([]);
+
+//   const handleAddToList = (songName) => {
+//     if (setlist.includes(songName)) {
+//       //
+//       const index = setlist.indexOf(songName);
+//       if (index > -1) {
+//         let remainingList = setlist.splice(index, 1);
+//         setSetlist(setlist);
+//       }
+//       //
+//     } else {
+//       setSetlist([...setlist.concat(songName)]); // add
+//     }
+//   };
+
+//   if (isLoading) return <p>Don't have a cow man, your songs are on the way</p>;
+//   ///////////////////////////////////////////////////////////////////////////////////////
+
+//   return <section></section>;
+// };
+
+// export default CreateSetlist;
