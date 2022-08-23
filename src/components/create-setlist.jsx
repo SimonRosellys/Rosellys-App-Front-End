@@ -95,7 +95,7 @@ const CreateSetlist = (show_id) => {
     <section>
       <DndProvider backend={HTML5Backend}>
         <div className="dnd-container-left">
-          <p>songs to choose from</p>
+          <p className="dnd-white-title">songs to choose from</p>
           {songs.map((song) => {
             return (
               <div
@@ -110,7 +110,7 @@ const CreateSetlist = (show_id) => {
           })}
         </div>
         <div className="dnd-container-right">
-          <p>chosen songs</p>
+          <p className="dnd-white-title">chosen songs</p>
         </div>
       </DndProvider>
     </section>

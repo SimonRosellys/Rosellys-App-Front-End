@@ -1,0 +1,13 @@
+Redeployment
+
+    Create an updated build version of your code:
+
+npm run build
+
+    Deploy to a draft url:
+
+netlify deploy
+
+    Deploy to your production url:
+
+netlify deploy --prod

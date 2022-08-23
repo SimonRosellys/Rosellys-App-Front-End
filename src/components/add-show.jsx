@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { addShow } from "../utils/api";
 
 function AddNewShow() {
@@ -32,7 +32,10 @@ function AddNewShow() {
   };
 
   const handleSubmit = (e) => {
-    addShow(newShow);
+    // e.preventDefault(); // remove this when finished testing
+    addShow(newShow).then((res) => {
+      console.log(res);
+    });
   };
 
   return (

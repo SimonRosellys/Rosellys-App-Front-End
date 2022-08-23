@@ -1,6 +1,8 @@
 import axios from "axios";
 
 const rosellysApi = axios.create({
+  // Alternate between these two for testing
+  // baseURL: "https://rosellys-app.herokuapp.com/api",
   baseURL: "http://localhost:9090/api",
 });
 
@@ -11,10 +13,9 @@ export const getShows = async () => {
   return data;
 };
 
-// TODO: NOT YET IMPLEMENTED
-// export const deleteShow = async (id) => {
-//   const { data } = await rosellysApi.delete(`/shows/${id}`);
-// };
+export const deleteShow = async (id) => {
+  const { data } = await rosellysApi.delete(`/shows/${id}`);
+};
 
 export const getSingleShow = async (id) => {
   const { data } = await rosellysApi.get(`/shows/${id}`);
@@ -25,6 +26,7 @@ export const addShow = (show) => {
   return rosellysApi
     .post(`/shows`, show, { headers: { "Content-Type": "application/json" } })
     .then(({ data }) => {
+      // console.log(data);
       return data;
     });
 };

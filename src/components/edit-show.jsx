@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { editShow } from "../utils/api";
+import { editShow, deleteShow } from "../utils/api";
 import Moment from "moment";
 
 function EditShow(showToEdit) {
@@ -24,6 +24,11 @@ function EditShow(showToEdit) {
 
   const handleShowMore = () => {
     setIsShown((current) => !current);
+  };
+
+  const handleDelete = (id) => {
+    window.location.reload();
+    deleteShow(id);
   };
 
   const handleChange = (e) => {
@@ -68,11 +73,23 @@ function EditShow(showToEdit) {
   const formatDate = Moment(showToEdit.show.show_date).format("YYYY-MM-DD");
 
   return (
-    <section>
-      <h4 onClick={() => handleShowMore()}>Edit this show</h4>
+    <section className="edit-show">
+      <h4 className="button-standard" onClick={() => handleShowMore()}>
+        Edit this show
+      </h4>
+
+      <button
+        className="button-standard"
+        onClick={() => handleDelete(showToEdit.show.show_id)}
+      >
+        Delete this show
+      </button>
       {isShown && (
-        <div className="dev-box">
+        <div className="edit-show">
           <form className="add-show-form" onSubmit={handleSubmit}>
+            <button className="button-standard" type="submit">
+              Save Changes
+            </button>
             <h6 className="add-show-form-field">Venue Name :</h6>{" "}
             <input
               required
@@ -175,7 +192,6 @@ function EditShow(showToEdit) {
               defaultValue={showToEdit.show.notes}
               onChange={handleChange}
             />
-            <button type="submit">Update Show</button>
           </form>
 
           <button
