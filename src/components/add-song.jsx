@@ -42,12 +42,7 @@ function AddNewSong() {
             <h6 className="add-song-form-field">Lyrics :</h6>{" "}
             <input type="text" name="lyrics" onChange={handleChange} />
             <h6 className="add-song-form-field">Key :</h6>{" "}
-            <input
-              required
-              type="text"
-              name="song_key"
-              onChange={handleChange}
-            />
+            <input type="text" name="song_key" onChange={handleChange} />
             <h6 className="add-song-form-field">Instrumentation :</h6>{" "}
             <input type="text" name="instrumentation" onChange={handleChange} />
             <h6 className="add-song-form-field">Composer :</h6>{" "}

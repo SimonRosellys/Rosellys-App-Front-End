@@ -8,7 +8,7 @@ const Home = () => {
         src={require("../images/ALBC ROSELLYS LOGO CLEAR BG.JPG")}
         alt={"Rosellys Logo"}
       />
-      <h1 className="dev">Log in section will be here</h1>
+      <h1 className="dev">Log in section will be here when implemented</h1>
     </div>
   );
 };

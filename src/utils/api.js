@@ -26,7 +26,6 @@ export const addShow = (show) => {
   return rosellysApi
     .post(`/shows`, show, { headers: { "Content-Type": "application/json" } })
     .then(({ data }) => {
-      // console.log(data);
       return data;
     });
 };

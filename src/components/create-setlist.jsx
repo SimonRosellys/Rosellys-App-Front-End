@@ -8,12 +8,6 @@ const CreateSetlist = (show_id) => {
   const [isLoading, setIsLoading] = useState(true);
   const [setlist, setSetlist] = useState([]);
 
-  // const handleAddToList = () => {
-  //   {
-  //     console.log(" Added to list function called");
-  //   }
-  // };
-
   const handleAddToList = (songName) => {
     if (setlist.includes(songName)) {
       //

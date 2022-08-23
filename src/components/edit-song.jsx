@@ -11,10 +11,8 @@ function EditSong(songToEdit) {
     instrumentation: song.song.soundcheck_time,
     composer: song.song.set_start_time,
     notes: song.song.venue_website,
-    // album: show.show.line_up,
+    // album: show.show.line_up, this will need to be added when an album column is added to the songs table
   });
-  // const [isLoading, setIsLoading] = useState(true);
-  // console.log(song);
 
   const handleShowMore = () => {
     setIsShown((current) => !current);
