@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { addShow } from "../utils/api";
+import Popup from "reactjs-popup";
 
 function AddNewShow() {
   const [isShown, setIsShown] = useState(false);
@@ -39,13 +40,11 @@ function AddNewShow() {
   };
 
   return (
-    <section>
-      <div>
-        <h1 className="add-show" onClick={() => handleShowMore()}>
-          Click here to add a show
-        </h1>
-      </div>
-      {isShown && (
+    <section className="standard-page">
+      <Popup
+        trigger={<h4 className="button-standard">ADD SHOW</h4>}
+        position="bottom center"
+      >
         <div className="add-show">
           <form className="add-show-form" onSubmit={handleSubmit}>
             <h6 className="add-show-form-field">Venue Name :</h6>{" "}
@@ -92,10 +91,12 @@ function AddNewShow() {
             <input type="text" name="contact_details" onChange={handleChange} />
             <h6 className="add-show-form-field">Venue Notes :</h6>{" "}
             <input type="text" name="notes" onChange={handleChange} />
-            <button type="submit">Add Show</button>
+            <button className="button-standard" type="submit">
+              SAVE
+            </button>
           </form>
         </div>
-      )}
+      </Popup>
     </section>
   );
 }

@@ -75,14 +75,14 @@ function EditShow(showToEdit) {
   return (
     <section className="edit-show">
       <h4 className="button-standard" onClick={() => handleShowMore()}>
-        Edit this show
+        EDIT
       </h4>
 
       <button
         className="button-standard"
         onClick={() => handleDelete(showToEdit.show.show_id)}
       >
-        Delete this show
+        DELETE
       </button>
       {isShown && (
         <div className="edit-show">
@@ -193,17 +193,6 @@ function EditShow(showToEdit) {
               onChange={handleChange}
             />
           </form>
-
-          <button
-            onClick={() =>
-              window.open(
-                "http://localhost:3000/create-setlist",
-                "noopener,noreferrer"
-              )
-            }
-          >
-            Create a set list
-          </button>
         </div>
       )}
     </section>

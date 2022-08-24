@@ -12,12 +12,13 @@ function Set_Lists() {
     });
   }, []);
 
-
   return (
     <section>
-      <a href="/create-setlist">Click here to create a new set list</a>
+      <h1 className="list-title">SET LISTS</h1>
+      <a href="/create-setlist" className="button-standard">
+        Click here to create a new set list
+      </a>
       <nav>
-        <h1 className="list-title">List of Rosellys Set Lists</h1>
         {setlists.map((list) => {
           return (
             <div className="show-list-items" key={list.setlist_id}>

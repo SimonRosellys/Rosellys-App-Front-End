@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { getSingleShow } from "../utils/api";
 import Moment from "moment";
 import EditShow from "./edit-show";
+import { Link } from "react-router-dom";
 
 function SingleShow({ id }) {
   const [show, setShow] = useState([]);
   const [isShown, setIsShown] = useState(false);
-
 
   const handleShowMore = (event) => {
     setIsShown((current) => !current);
@@ -22,7 +22,6 @@ function SingleShow({ id }) {
   useEffect(() => {
     getSingleShow(id).then((show) => {
       setShow(show[0]);
-
     });
   }, [id]);
 
@@ -32,6 +31,10 @@ function SingleShow({ id }) {
     <section>
       <div>
         <EditShow show={show} />
+        {/* <h1 */}
+        {/* className="button-standard" */}
+        <Link to="/create-setlist">CREATE SET LIST</Link>
+        {/* </h1> */}
         <p>Address: {show.venue_address}</p>
         <p>Date: {formatDate}</p>
         <p>Soundcheck: {show.soundcheck_time}</p>

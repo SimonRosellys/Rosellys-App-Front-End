@@ -7,30 +7,19 @@ import Songs from "./pages/songs";
 import CreateSetlist from "./components/create-setlist";
 import "./App.css";
 import "./styles.css";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  let Component;
-  switch (window.location.pathname) {
-    case "/":
-      Component = Home;
-      break;
-    case "/shows":
-      Component = Shows;
-      break;
-    case "/set-lists":
-      Component = Set_Lists;
-      break;
-    case "/songs":
-      Component = Songs;
-      break;
-    case "/create-setlist":
-      Component = CreateSetlist;
-      break;
-  }
   return (
     <>
       <Navbar />
-      <Component />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shows" element={<Shows />} />
+        <Route path="/set-lists" element={<Set_Lists />} />
+        <Route path="/songs" element={<Songs />} />
+        <Route path="/create-setlist" element={<CreateSetlist />} />
+      </Routes>
     </>
   );
 }

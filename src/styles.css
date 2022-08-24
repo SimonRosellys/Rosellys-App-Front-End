@@ -1,15 +1,61 @@
 * {
   box-sizing: border-box;
+  background: rgb(223, 193, 255);
+  color: rgb(0, 0, 0);
 }
 
 body {
   margin: 0;
 }
 
+.standard-page {
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.title-header {
+  margin: 2px;
+}
+
+.title-button {
+  margin: 2px;
+}
+.title-and-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 1px 0;
+  /* box-sizing: border-box; */
+}
+input[type="date"] {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 1px 0;
+  /* box-sizing: border-box; */
+}
+input[type="time"] {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 1px 0;
+  /* box-sizing: border-box; */
+}
+input[type="int"] {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 1px 0;
+  /* box-sizing: border-box; */
+}
+
 .nav {
-  /* position: fixed; */
-  background-color: #333;
-  color: white;
+  border: 1px solid rgb(93, 35, 251);
+  background-color: rgb(148, 111, 251);
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -18,7 +64,8 @@ body {
 }
 
 .nav a {
-  color: inherit;
+  color: #ffffff;
+  background-color: rgb(148, 111, 251);
   text-decoration: none;
   height: 100%;
   display: flex;
@@ -27,6 +74,7 @@ body {
 }
 
 .nav ul {
+  background-color: rgb(148, 111, 251);
   padding: 0;
   margin: 0;
   list-style: none;
@@ -36,7 +84,7 @@ body {
 
 .site-title {
   font-size: 1.5rem;
-  margin-right: 10px;
+  background-color: rgb(148, 111, 251);
 }
 
 /* .nav li.active {
@@ -50,13 +98,11 @@ body {
 .list-title {
   /* border: 1px solid #182a37; */
   text-align: center;
-  color: rgb(0, 0, 0);
   margin-bottom: 1px;
   margin-top: 1px;
 }
 
 .show-list-items {
-  color: rgb(0, 0, 0);
   /* border: 1px solid #ff0000; */
   text-align: center;
   margin-bottom: 5px;
@@ -69,7 +115,7 @@ body {
 
 .show-list-items h1 {
   font-size: 2rem;
-  margin: 5px;
+  margin: 1px;
 }
 
 .song-list-items {
@@ -105,10 +151,42 @@ body {
   margin-top: 1px;
 }
 
-.add-show {
-  border: 1px solid #ff0000;
+.add-show-button {
+  margin: 10px;
   text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  line-height: 14px;
+  padding: 8px;
+  border-radius: 10px;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background-image: linear-gradient(
+    to right,
+    rgb(148, 111, 251) 0%,
+    rgb(128, 83, 250) 50%,
+    rgb(112, 61, 254) 100%
+  );
+  box-shadow: rgb(0, 0, 0) 1px 5px 15px 1px;
+  border: 2px solid rgb(93, 35, 251);
 }
+
+/* .add-show-button:hover {
+  background: rgb(189, 165, 255);
+}
+
+.add-show-button:active {
+  background: rgb(148, 111, 251);
+} */
+
+/* .add-show {
+  /* border: 1px solid #ff0000; */
+/* text-align: center; */
+/* } */
 
 .add-show-form {
   margin: 10px;
@@ -141,7 +219,6 @@ body {
 }
 
 .edit-show {
-  background: rgb(138, 0, 103);
   color: #cfcece;
 }
 
@@ -159,13 +236,14 @@ body {
   text-transform: none;
   background-image: linear-gradient(
     to right,
-    rgb(138, 0, 103) 0%,
-    rgb(128, 22, 114) 50%,
-    rgb(113, 7, 120) 100%
+    rgb(148, 111, 251) 0%,
+    rgb(128, 83, 250) 50%,
+    rgb(112, 61, 254) 100%
   );
   box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
-  border: 2px solid rgb(138, 0, 103);
+  border: 2px solid rgb(93, 35, 251);
   display: inline-block;
+  margin: 2px;
 }
 
 .myButton:hover {
@@ -189,7 +267,6 @@ body {
 .modal-content {
   width: 100%;
   padding: 10px 5px;
-  background: rgb(138, 0, 103);
   color: #cfcece;
 }
 .modal-actions {
@@ -210,6 +287,14 @@ body {
   background: #ffffff;
   border-radius: 18px;
   border: 1px solid #cfcece;
+}
+
+[role="tooltip"].popup-content {
+  width: 98%;
+  box-shadow: 0 0 3px rgb(0 0 0 / 16%);
+  border-radius: 5px;
+  border: 1px solid rgb(93, 35, 251);
+  background: rgb(223, 193, 255);
 }
 /* POPUP ************************************************************ */
 

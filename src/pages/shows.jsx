@@ -20,9 +20,11 @@ const Shows = () => {
 
   return (
     <section>
-      <AddNewShow />
+      <div className="title-and-button">
+        <h1 className="title-header">SHOWS</h1>
+        <AddNewShow className="title-button" />
+      </div>
       <nav>
-        <h1 className="list-title">List of Rosellys Shows</h1>
         {shows.map((show) => {
           return (
             <div className="show-list-items" key={show.show_id}>

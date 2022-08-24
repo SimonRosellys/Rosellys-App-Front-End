@@ -30,7 +30,7 @@ function AddNewSong() {
   return (
     <section>
       <div>
-        <h1 className="add-song" onClick={() => handleShowMore()}>
+        <h1 className="button-standard" onClick={() => handleShowMore()}>
           Click here to add a song
         </h1>
       </div>

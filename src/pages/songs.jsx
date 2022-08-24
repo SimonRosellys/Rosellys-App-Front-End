@@ -18,11 +18,10 @@ const Songs = () => {
 
   return (
     <section>
+      <h1 className="list-title">SONGS</h1>
       <AddNewSong />
       <nav>
-        <div>
-          <h1 className="list-title">List of Rosellys Songs</h1>
-        </div>
+        <div></div>
 
         {songs.map((song) => {
           return (
