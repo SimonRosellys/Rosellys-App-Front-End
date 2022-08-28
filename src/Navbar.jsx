@@ -2,9 +2,16 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <ul>
-        <li>
-          <a href="/" className="site-title">
+        <li className="site-title">
+          {/* <a href="/" className="site-title">
             The Rosellys App
+          </a> */}
+          <a href="/">
+            <img
+              className="nav-logo"
+              src={require("../src/images/ALBC ROSELLYS LOGO WHITE.png")}
+              alt={"Rosellys Logo"}
+            />
           </a>
         </li>
         <li>

@@ -145,6 +145,12 @@ input[type="int"] {
   max-width: 100%;
 }
 
+.nav-logo {
+  background-color: rgb(148, 111, 251);
+  max-height: 100%;
+  max-width: 100%;
+}
+
 .dev {
   color: rgb(255, 25, 25);
   text-align: center;
@@ -211,8 +217,8 @@ input[type="int"] {
 }
 
 .dev-box {
-  border: 1px solid #6e2bff;
-  border-width: 3px;
+  /* border: 1px solid #6e2bff;
+  border-width: 3px; */
   width: 100%;
   align-items: center;
   margin-left: auto;

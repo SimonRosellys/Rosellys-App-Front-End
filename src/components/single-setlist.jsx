@@ -41,8 +41,7 @@ function SingleSetlist({ id }) {
   }
   return (
     <section>
-      <Popup trigger={<h4>test2</h4>} position="bottom center">
-        {/* <Popup trigger={<h4>{show.venue_name}</h4>} position="bottom center"> */}
+      <Popup trigger={<h4>{show.venue_name}</h4>} position="bottom center">
         <div className="modal-content">
           {setlist.list_array.map((song) => {
             return <div key={song}>{songs[song].title}</div>;

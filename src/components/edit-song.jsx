@@ -63,7 +63,6 @@ function EditSong(songToEdit) {
             />
             <h6 className="add-song-form-field">Key :</h6>
             <input
-              required
               type="text"
               name="song_key"
               defaultValue={song.song.song_key}
