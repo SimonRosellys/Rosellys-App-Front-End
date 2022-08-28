@@ -16,7 +16,7 @@ function Set_Lists() {
     <section>
       <h1 className="list-title">SET LISTS</h1>
       <a href="/create-setlist" className="button-standard">
-        Click here to create a new set list
+        CREATE SET LIST
       </a>
       <nav>
         {setlists.map((list) => {

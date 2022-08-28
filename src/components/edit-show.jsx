@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { editShow, deleteShow } from "../utils/api";
 import Moment from "moment";
+import { Link } from "react-router-dom";
 
 function EditShow(showToEdit) {
   const [show, setShow] = useState(showToEdit); // TODO: refactor this by directly assigning showToEdit where needed as setShow is not used
@@ -84,6 +85,11 @@ function EditShow(showToEdit) {
       >
         DELETE
       </button>
+
+      <Link className="button-standard" to="/create-setlist">
+        CREATE SET LIST
+      </Link>
+
       {isShown && (
         <div className="edit-show">
           <form className="add-show-form" onSubmit={handleSubmit}>

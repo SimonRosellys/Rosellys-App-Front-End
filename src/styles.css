@@ -21,6 +21,7 @@ body {
 .title-button {
   margin: 2px;
 }
+
 .title-and-button {
   display: flex;
   flex-direction: column;

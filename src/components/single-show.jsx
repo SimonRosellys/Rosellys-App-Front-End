@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { getSingleShow } from "../utils/api";
 import Moment from "moment";
 import EditShow from "./edit-show";
-import { Link } from "react-router-dom";
 
 function SingleShow({ id }) {
   const [show, setShow] = useState([]);
@@ -33,7 +32,6 @@ function SingleShow({ id }) {
         <EditShow show={show} />
         {/* <h1 */}
         {/* className="button-standard" */}
-        <Link to="/create-setlist">CREATE SET LIST</Link>
         {/* </h1> */}
         <p>Address: {show.venue_address}</p>
         <p>Date: {formatDate}</p>

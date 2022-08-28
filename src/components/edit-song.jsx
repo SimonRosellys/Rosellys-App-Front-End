@@ -40,7 +40,9 @@ function EditSong(songToEdit) {
 
   return (
     <section>
-      <h4 onClick={() => handleShowMore()}>Edit this song</h4>
+      <h4 className="button-standard" onClick={() => handleShowMore()}>
+        Edit this song
+      </h4>
       {isShown && (
         <div className="dev-box">
           <form className="add-show-form" onSubmit={handleSubmit}>
@@ -88,7 +90,9 @@ function EditSong(songToEdit) {
               defaultValue={song.song.notes}
               onChange={handleChange}
             />
-            <button type="submit">Update Song</button>
+            <button className="button-standard" type="submit">
+              Update Song
+            </button>
           </form>
           {/* <button>Add a set list</button> */}
         </div>
