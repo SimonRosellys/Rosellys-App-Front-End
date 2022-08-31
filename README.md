@@ -5,6 +5,10 @@ The Rosellys-App is a band management tool designed to help with the organisatio
 This is the frontend repo for the Rosellys-App API.
 This app allows you to view, edit and delete data through a user friendly interface.
 
+There is a test version running on Netlify at:
+
+    https://the-rosellys-app.netlify.app/
+
 ---
 
 ### **Get started**
