@@ -9,6 +9,8 @@ function SingleSong({ id }) {
   let coverText;
   let stageReadyText;
   let instrument;
+  let instrument2;
+  let instrument3;
 
   useEffect(() => {
     getSingleSong(id).then((song) => {
@@ -75,9 +77,27 @@ function SingleSong({ id }) {
   if (song.instrumentation?.includes("FIDDLE")) {
     instrument = (
       <img
-        className="album-thumbnail-logo"
+        className="inst-thumbnail-logo"
         src={require("../images/fiddle.png")}
-        alt={"On The Porch album cover"}
+        alt={"violin"}
+      />
+    );
+  }
+  if (song.instrumentation?.includes("ACCORDIAN")) {
+    instrument2 = (
+      <img
+        className="inst-thumbnail-logo"
+        src={require("../images/accordian.png")}
+        alt={"accordian"}
+      />
+    );
+  }
+  if (song.instrumentation?.includes("BANJO")) {
+    instrument3 = (
+      <img
+        className="inst-thumbnail-logo"
+        src={require("../images/banjo.png")}
+        alt={"banjo"}
       />
     );
   }
@@ -87,9 +107,11 @@ function SingleSong({ id }) {
       <Popup trigger={<h4>{song.title}</h4>} position="bottom center">
         <div>
           <p>Key: {song.song_key}</p>
-          <p>Composer: {song.composer}</p>
-          <p>Instrumentation: {instrument}</p>
+          <p>
+            Instrumentation: {instrument} {instrument2} {instrument3}
+          </p>
           <p>Lyrics: {song.lyrics}</p>
+          <p>Composer: {song.composer}</p>
           <p>Notes: {song.notes}</p>
           <p>
             {coverText} {cover}
