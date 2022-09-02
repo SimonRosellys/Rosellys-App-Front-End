@@ -4,7 +4,6 @@ import Popup from "reactjs-popup";
 
 function SingleSetlist({ id }) {
   const [setlist, setSetlist] = useState([]);
-  const [isShown, setIsShown] = useState(false);
   const [show, setShow] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [songs, setSongs] = useState([]);
@@ -32,13 +31,11 @@ function SingleSetlist({ id }) {
     setIsLoading(false);
   }
 
-  const handleShowMore = (event) => {
-    setIsShown((current) => !current);
-  };
-
   if (isLoading) {
     return <div className="App">Loading...</div>;
   }
+
+  console.log(show);
   return (
     <section>
       <Popup trigger={<h4>{show.venue_name}</h4>} position="bottom center">
@@ -53,4 +50,4 @@ function SingleSetlist({ id }) {
 }
 
 export default SingleSetlist;
-// NOT SEEING THE SHOW OBJECT, WHY? {show.venue_name}
+// NOT SEEING THE SHOW OBJECT ON LOCAL HOST, BUT IS WORKING FINE THROUGH HEROKU, WHY? {show.venue_name}

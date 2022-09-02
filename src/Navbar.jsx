@@ -3,9 +3,6 @@ export default function Navbar() {
     <nav className="nav">
       <ul>
         <li className="site-title">
-          {/* <a href="/" className="site-title">
-            The Rosellys App
-          </a> */}
           <a href="/">
             <img
               className="nav-logo"

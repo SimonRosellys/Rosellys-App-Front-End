@@ -10,6 +10,8 @@ function AddNewSong() {
     instrumentation: "",
     composer: "",
     notes: "",
+    album: "",
+    stage_ready: "",
   });
 
   const handleShowMore = (event) => {
@@ -49,6 +51,12 @@ function AddNewSong() {
             <input type="text" name="composer" onChange={handleChange} />
             <h6 className="add-song-form-field">Notes :</h6>{" "}
             <input type="text" name="notes" onChange={handleChange} />
+            {/* album and stage-ready added */}
+            <h6 className="add-song-form-field">Album :</h6>{" "}
+            <input type="text" name="album" onChange={handleChange} />
+            <h6 className="add-song-form-field">Stage Ready? :</h6>{" "}
+            <input type="text" name="stage_ready" onChange={handleChange} />
+            {/* to here */}
             <button type="submit">Add Show</button>
           </form>
         </div>

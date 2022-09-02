@@ -58,10 +58,11 @@ input[type="int"] {
   border: 1px solid rgb(93, 35, 251);
   background-color: rgb(148, 111, 251);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: stretch;
   /* gap: 2rem; */
   padding: 0 1rem;
+  height: 100px;
 }
 
 .nav a {
@@ -70,7 +71,7 @@ input[type="int"] {
   text-decoration: none;
   height: 100%;
   display: flex;
-  align-items: center;
+  width: 70px;
   padding: 0.25rem;
 }
 
@@ -81,6 +82,15 @@ input[type="int"] {
   list-style: none;
   display: flex;
   gap: 1rem;
+  max-height: 7rem;
+  align-items: center;
+}
+
+.nav-logo {
+  background-color: rgb(148, 111, 251);
+  max-height: 100%;
+  max-width: 100%;
+  flex-grow: 2;
 }
 
 .site-title {
@@ -141,14 +151,16 @@ input[type="int"] {
   padding: 0;
   display: block;
   margin: 0 auto;
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 50%;
+  max-width: 50%;
 }
 
-.nav-logo {
-  background-color: rgb(148, 111, 251);
-  max-height: 100%;
-  max-width: 100%;
+.album-thumbnail-logo {
+  padding: 0;
+  display: block;
+  /* margin: 0 auto; */
+  max-height: 20%;
+  max-width: 20%;
 }
 
 .dev {

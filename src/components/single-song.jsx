@@ -5,19 +5,82 @@ import Popup from "reactjs-popup";
 
 function SingleSong({ id }) {
   const [song, setSong] = useState([]);
-  const [isShown, setIsShown] = useState(false);
-
-
-  const handleShowMore = (event) => {
-    setIsShown((current) => !current);
-  };
+  let cover;
+  let coverText;
+  let stageReadyText;
+  let instrument;
 
   useEffect(() => {
     getSingleSong(id).then((song) => {
       setSong(song[0]);
-
     });
   }, [id]);
+
+  if (song.album === "1") {
+    coverText = "Drive Through The Night - Album 01";
+    cover = (
+      <img
+        className="album-thumbnail-logo"
+        src={require("../images/Cover01.jpg")}
+        alt={"Drive Through The Night album cover"}
+      />
+    );
+  }
+  if (song.album === "2") {
+    coverText = "One Way St - Album 02";
+    cover = (
+      <img
+        className="album-thumbnail-logo"
+        src={require("../images/Cover02.jpg")}
+        alt={"One Way St album cover"}
+      />
+    );
+  }
+  if (song.album === "3") {
+    coverText = "Two Much Like Trouble - Album 03";
+    cover = (
+      <img
+        className="album-thumbnail-logo"
+        src={require("../images/Cover03.jpg")}
+        alt={"Two Much Like Trouble album cover"}
+      />
+    );
+  }
+  if (song.album === "4") {
+    coverText = "The Granary Sessions - Album 04";
+    cover = (
+      <img
+        className="album-thumbnail-logo"
+        src={require("../images/Cover04.png")}
+        alt={"The Granary Sessions album cover"}
+      />
+    );
+  }
+  if (song.album === "5") {
+    coverText = "On The Porch - Album 05";
+    cover = (
+      <img
+        className="album-thumbnail-logo"
+        src={require("../images/Cover05.jpg")}
+        alt={"On The Porch album cover"}
+      />
+    );
+  }
+  if (song.album === "") {
+    coverText = "Not currently on an album";
+  }
+  if (song.stage_ready === "Y") {
+    stageReadyText = "This song is STAGE READY";
+  }
+  if (song.instrumentation?.includes("FIDDLE")) {
+    instrument = (
+      <img
+        className="album-thumbnail-logo"
+        src={require("../images/fiddle.png")}
+        alt={"On The Porch album cover"}
+      />
+    );
+  }
 
   return (
     <section className="dev-box">
@@ -25,9 +88,13 @@ function SingleSong({ id }) {
         <div>
           <p>Key: {song.song_key}</p>
           <p>Composer: {song.composer}</p>
-          <p>Instrumentation: {song.instrumentation}</p>
+          <p>Instrumentation: {instrument}</p>
           <p>Lyrics: {song.lyrics}</p>
           <p>Notes: {song.notes}</p>
+          <p>
+            {coverText} {cover}
+          </p>
+          <p>{stageReadyText}</p>
           <EditSong song={song} />
         </div>
       </Popup>{" "}

@@ -89,6 +89,20 @@ function EditSong(songToEdit) {
               defaultValue={song.song.notes}
               onChange={handleChange}
             />
+            <h6 className="add-show-form-field">album :</h6>{" "}
+            <input
+              type="text"
+              name="album"
+              defaultValue={song.song.album}
+              onChange={handleChange}
+            />
+            <h6 className="add-show-form-field">stage ready :</h6>{" "}
+            <input
+              type="text"
+              name="stage_ready"
+              defaultValue={song.song.stage_ready}
+              onChange={handleChange}
+            />
             <button className="button-standard" type="submit">
               Update Song
             </button>
@@ -100,3 +114,4 @@ function EditSong(songToEdit) {
   );
 }
 export default EditSong;
+// UPDATING ALBUM AND STAGE_READY IS WORKING ON LOCALHOST BUT NOT HEROKU

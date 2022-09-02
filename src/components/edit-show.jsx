@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { editShow, deleteShow } from "../utils/api";
 import Moment from "moment";
 import { Link } from "react-router-dom";
+import Popup from "reactjs-popup";
 
 function EditShow(showToEdit) {
   const [show, setShow] = useState(showToEdit); // TODO: refactor this by directly assigning showToEdit where needed as setShow is not used
@@ -78,13 +79,6 @@ function EditShow(showToEdit) {
       <h4 className="button-standard" onClick={() => handleShowMore()}>
         EDIT
       </h4>
-
-      <button
-        className="button-standard"
-        onClick={() => handleDelete(showToEdit.show.show_id)}
-      >
-        DELETE
-      </button>
 
       <Link className="button-standard" to="/create-setlist">
         CREATE SET LIST
@@ -198,6 +192,12 @@ function EditShow(showToEdit) {
               defaultValue={showToEdit.show.notes}
               onChange={handleChange}
             />
+            <button
+              className="button-standard"
+              onClick={() => handleDelete(showToEdit.show.show_id)}
+            >
+              DELETE THIS SHOW
+            </button>
           </form>
         </div>
       )}

@@ -30,9 +30,6 @@ function SingleShow({ id }) {
     <section>
       <div>
         <EditShow show={show} />
-        {/* <h1 */}
-        {/* className="button-standard" */}
-        {/* </h1> */}
         <p>Address: {show.venue_address}</p>
         <p>Date: {formatDate}</p>
         <p>Soundcheck: {show.soundcheck_time}</p>
@@ -45,7 +42,7 @@ function SingleShow({ id }) {
         <p>Received Payment? {onToYes(show.paid_in)}</p>
         <p>Band Paid? {onToYes(show.paid_out)}</p>
         <p>Contact Details: {show.contact_details}</p>
-        <p>Additional Notes: {show.notes}</p>
+        <p>Notes: {show.notes}</p>
         {/* <p>Show ID: {show.show_id}</p> */}
         {/* TODO: add set list view/add here */}
       </div>
