@@ -77,19 +77,18 @@ function EditShow(showToEdit) {
   return (
     <section className="edit-show">
       <h4 className="button-standard" onClick={() => handleShowMore()}>
-        EDIT
+        {isShown ? "CANCEL" : "EDIT"}
       </h4>
-
-      <Link className="button-standard" to="/create-setlist">
-        CREATE SET LIST
-      </Link>
 
       {isShown && (
         <div className="edit-show">
+          <button className="button-standard" type="submit">
+            SAVE CHANGES
+          </button>
+          <Link className="button-standard" to="/create-setlist">
+            CREATE SET LIST
+          </Link>
           <form className="add-show-form" onSubmit={handleSubmit}>
-            <button className="button-standard" type="submit">
-              Save Changes
-            </button>
             <h6 className="add-show-form-field">Venue Name :</h6>{" "}
             <input
               required

@@ -11,7 +11,8 @@ function EditSong(songToEdit) {
     instrumentation: song.song.soundcheck_time,
     composer: song.song.set_start_time,
     notes: song.song.venue_website,
-    // album: show.show.line_up, this will need to be added when an album column is added to the songs table
+    album: song.song.album,
+    stage_ready: song.song.stage_ready,
   });
 
   const handleShowMore = () => {
@@ -27,8 +28,8 @@ function EditSong(songToEdit) {
   };
 
   const handleSubmit = (e) => {
-    for (let i = 0; i < 6; i++) {
-      // FIXME: This is the current number of fields (6) and will need to be updated or made dynamic if further fields are added
+    for (let i = 0; i < 8; i++) {
+      // FIXME: This is the current number of fields (8) and will need to be updated or made dynamic if further fields are added
       const { name, value } = e.target[i];
       setNewSong((prev) => {
         return { ...prev, [name]: value };
@@ -41,10 +42,13 @@ function EditSong(songToEdit) {
   return (
     <section>
       <h4 className="button-standard" onClick={() => handleShowMore()}>
-        Edit this song
+        {isShown ? "CANCEL" : "EDIT"}
       </h4>
       {isShown && (
         <div className="dev-box">
+          <button className="button-standard" type="submit">
+            SAVE CHANGES
+          </button>
           <form className="add-show-form" onSubmit={handleSubmit}>
             <h6 className="add-show-form-field">Song Name :</h6>{" "}
             <input
@@ -103,11 +107,7 @@ function EditSong(songToEdit) {
               defaultValue={song.song.stage_ready}
               onChange={handleChange}
             />
-            <button className="button-standard" type="submit">
-              Update Song
-            </button>
           </form>
-          {/* <button>Add a set list</button> */}
         </div>
       )}
     </section>

@@ -8,7 +8,7 @@ function SingleSong({ id }) {
   let cover;
   let coverText;
   let stageReadyText;
-  let instrument;
+  let instrument = "Standard Set Up";
   let instrument2;
   let instrument3;
 

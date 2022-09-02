@@ -35,7 +35,7 @@ function SingleSetlist({ id }) {
     return <div className="App">Loading...</div>;
   }
 
-  console.log(show);
+  // console.log(show);
   return (
     <section>
       <Popup trigger={<h4>{show.venue_name}</h4>} position="bottom center">
