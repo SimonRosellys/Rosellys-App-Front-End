@@ -1,4 +1,4 @@
-import { deleteShow } from "../utils/api";
+import { deleteShow } from "../../utils/api";
 
 function DeleteShow(id) {
   deleteShow(id).then((show) => {

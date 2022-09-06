@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Shows from "./pages/shows";
-import Set_Lists from "./pages/set-lists";
-import Home from "./pages/home";
-import Songs from "./pages/songs";
-import CreateSetlist from "./components/create-setlist";
+import Navbar from "./components/navbar/Navbar";
+import Shows from "./components/shows/shows";
+import Set_Lists from "./components/setlists/set-lists";
+import Home from "./components/home/home";
+import Songs from "./components/songs/songs";
+import CreateSetlist from "./components/setlists/create-setlist";
 import "./App.css";
 import "./styles.css";
 import { Route, Routes } from "react-router-dom";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getSingleShow } from "../utils/api";
+import { getSingleShow } from "../../utils/api";
 import Moment from "moment";
 import EditShow from "./edit-show";
 

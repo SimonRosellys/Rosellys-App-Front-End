@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getSingleSong } from "../utils/api";
+import { getSingleSong } from "../../utils/api";
 
 function SingleSong({ id }) {
   const [song, setSong] = useState([]);

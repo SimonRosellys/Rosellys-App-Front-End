@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { getSingleSong } from "../utils/api";
-import EditSong from "./edit-song";
+import { getSingleSong } from "../../utils/api";
+import EditSong from "../songs/edit-song";
 import Popup from "reactjs-popup";
 
 function SingleSong({ id }) {
@@ -23,7 +23,7 @@ function SingleSong({ id }) {
     cover = (
       <img
         className="album-thumbnail-logo"
-        src={require("../images/Cover01.jpg")}
+        src={require("../../images/Cover01.jpg")}
         alt={"Drive Through The Night album cover"}
       />
     );
@@ -33,7 +33,7 @@ function SingleSong({ id }) {
     cover = (
       <img
         className="album-thumbnail-logo"
-        src={require("../images/Cover02.jpg")}
+        src={require("../../images/Cover02.jpg")}
         alt={"One Way St album cover"}
       />
     );
@@ -43,7 +43,7 @@ function SingleSong({ id }) {
     cover = (
       <img
         className="album-thumbnail-logo"
-        src={require("../images/Cover03.jpg")}
+        src={require("../../images/Cover03.jpg")}
         alt={"Two Much Like Trouble album cover"}
       />
     );
@@ -53,7 +53,7 @@ function SingleSong({ id }) {
     cover = (
       <img
         className="album-thumbnail-logo"
-        src={require("../images/Cover04.png")}
+        src={require("../../images/Cover04.png")}
         alt={"The Granary Sessions album cover"}
       />
     );
@@ -63,7 +63,7 @@ function SingleSong({ id }) {
     cover = (
       <img
         className="album-thumbnail-logo"
-        src={require("../images/Cover05.jpg")}
+        src={require("../../images/Cover05.jpg")}
         alt={"On The Porch album cover"}
       />
     );
@@ -78,7 +78,7 @@ function SingleSong({ id }) {
     instrument = (
       <img
         className="inst-thumbnail-logo"
-        src={require("../images/fiddle.png")}
+        src={require("../../images/fiddle.png")}
         alt={"violin"}
       />
     );
@@ -87,7 +87,7 @@ function SingleSong({ id }) {
     instrument2 = (
       <img
         className="inst-thumbnail-logo"
-        src={require("../images/accordian.png")}
+        src={require("../../images/accordian.png")}
         alt={"accordian"}
       />
     );
@@ -96,7 +96,7 @@ function SingleSong({ id }) {
     instrument3 = (
       <img
         className="inst-thumbnail-logo"
-        src={require("../images/banjo.png")}
+        src={require("../../images/banjo.png")}
         alt={"banjo"}
       />
     );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { getShows } from "../utils/api";
-import SingleShow from "../components/single-show";
-import AddNewShow from "../components/add-show";
+import { getShows } from "../../utils/api";
+import SingleShow from "./single-show";
+import AddNewShow from "./add-show";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 

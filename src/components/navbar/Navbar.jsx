@@ -6,7 +6,7 @@ export default function Navbar() {
           <a href="/">
             <img
               className="nav-logo"
-              src={require("../src/images/ALBC ROSELLYS LOGO WHITE.png")}
+              src={require("../../images/ALBC ROSELLYS LOGO WHITE.png")}
               alt={"Rosellys Logo"}
             />
           </a>

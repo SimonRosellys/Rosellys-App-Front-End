@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { editSong } from "../utils/api";
+import { editSong } from "../../utils/api";
 
 function EditSong(songToEdit) {
   const [song, setSong] = useState(songToEdit); // TODO: refactor this by directly assigning songToEdit where needed as setSong is not used
@@ -46,62 +46,86 @@ function EditSong(songToEdit) {
       </h4>
       {isShown && (
         <div className="dev-box">
-          <button className="button-standard" type="submit">
-            SAVE CHANGES
-          </button>
           <form className="add-show-form" onSubmit={handleSubmit}>
-            <h6 className="add-show-form-field">Song Name :</h6>{" "}
+            <button className="button-standard" type="submit">
+              SAVE CHANGES
+            </button>
+            <label for="name" className="add-show-form-field">
+              Song Name :
+            </label>{" "}
             <input
+              id="name"
               required
               type="text"
               name="title"
               defaultValue={song.song.title}
               onChange={handleChange}
             />
-            <h6 className="add-song-form-field">Lyrics :</h6>{" "}
+            <label for="lyrics" className="add-song-form-field">
+              Lyrics :
+            </label>{" "}
             <input
+              id="lyrics"
               type="text"
               name="lyrics"
               defaultValue={song.song.lyrics}
               onChange={handleChange}
             />
-            <h6 className="add-song-form-field">Key :</h6>
+            <label for="key" className="add-song-form-field">
+              Key :
+            </label>
             <input
+              id="key"
               type="text"
               name="song_key"
               defaultValue={song.song.song_key}
               onChange={handleChange}
             />
-            <h6 className="add-song-form-field">Instrumentation :</h6>{" "}
+            <label for="instruments" className="add-song-form-field">
+              Instrumentation :
+            </label>{" "}
             <input
+              id="instruments"
               type="text"
               name="instrumentation"
               defaultValue={song.song.instrumentation}
               onChange={handleChange}
             />
-            <h6 className="add-song-form-field">Composer :</h6>{" "}
+            <label for="composer" className="add-song-form-field">
+              Composer :
+            </label>{" "}
             <input
+              id="composer"
               type="text"
               name="composer"
               defaultValue={song.song.composer}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">notes :</h6>{" "}
+            <label for="notes" className="add-show-form-field">
+              notes :
+            </label>{" "}
             <input
+              id="notes"
               type="text"
               name="notes"
               defaultValue={song.song.notes}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">album :</h6>{" "}
+            <label for="album" className="add-show-form-field">
+              album :
+            </label>{" "}
             <input
+              id="album"
               type="text"
               name="album"
               defaultValue={song.song.album}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">stage ready :</h6>{" "}
+            <label for="ready" className="add-show-form-field">
+              stage ready :
+            </label>{" "}
             <input
+              id="ready"
               type="text"
               name="stage_ready"
               defaultValue={song.song.stage_ready}

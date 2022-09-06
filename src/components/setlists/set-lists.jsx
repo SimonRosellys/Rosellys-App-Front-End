@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getSetlists } from "../utils/api";
-import SingleSetlist from "../components/single-setlist";
-import CreateSetlist from "../components/create-setlist";
+import { getSetlists } from "../../utils/api";
+import SingleSetlist from "./single-setlist";
 
 function Set_Lists() {
   const [setlists, setSetlists] = useState([]);
@@ -14,10 +13,13 @@ function Set_Lists() {
 
   return (
     <section>
-      <h1 className="list-title">SET LISTS</h1>
-      <a href="/create-setlist" className="button-standard">
-        CREATE SET LIST
-      </a>
+      <div className="title-and-button">
+        <h1 className="list-title">SET LISTS</h1>
+        <a href="/create-setlist" className="button-standard">
+          CREATE SET LIST
+        </a>
+      </div>
+
       <nav>
         {setlists.map((list) => {
           return (

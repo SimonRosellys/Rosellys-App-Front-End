@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { editShow, deleteShow } from "../utils/api";
+import { editShow, deleteShow } from "../../utils/api";
 import Moment from "moment";
 import { Link } from "react-router-dom";
-import Popup from "reactjs-popup";
 
 function EditShow(showToEdit) {
   const [show, setShow] = useState(showToEdit); // TODO: refactor this by directly assigning showToEdit where needed as setShow is not used
@@ -61,7 +60,7 @@ function EditShow(showToEdit) {
   const handleSubmit = (e) => {
     for (let i = 0; i < 15; i++) {
       // FIXME: This is the current number of fields (14) and will need to be updated or made dynamic if further fields are added
-      console.log(e.target);
+      // console.log(e.target);
       const { name, value } = e.target[i];
       setNewShow((prev) => {
         return { ...prev, [name]: value };
@@ -76,116 +75,156 @@ function EditShow(showToEdit) {
 
   return (
     <section className="edit-show">
-      <h4 className="button-standard" onClick={() => handleShowMore()}>
+      <button className="button-standard" onClick={() => handleShowMore()}>
         {isShown ? "CANCEL" : "EDIT"}
-      </h4>
+      </button>
 
       {isShown && (
         <div className="edit-show">
-          <button className="button-standard" type="submit">
-            SAVE CHANGES
-          </button>
-          <Link className="button-standard" to="/create-setlist">
-            CREATE SET LIST
-          </Link>
           <form className="add-show-form" onSubmit={handleSubmit}>
-            <h6 className="add-show-form-field">Venue Name :</h6>{" "}
+            <button className="button-standard" type="submit">
+              SAVE CHANGES
+            </button>
+            <Link className="button-standard" to="/create-setlist">
+              CREATE SET LIST
+            </Link>
+            <label for="name" className="add-show-form-field">
+              Venue Name :
+            </label>{" "}
             <input
+              id="name"
               required
               type="text"
               name="venue_name"
               defaultValue={showToEdit.show.venue_name}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">Venue Address :</h6>{" "}
+            <label for="address" className="add-show-form-field">
+              Venue Address :
+            </label>{" "}
             <input
+              id="address"
               type="text"
               name="venue_address"
               defaultValue={showToEdit.show.venue_address}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">Show Date :</h6>
+            <label for="date" className="add-show-form-field">
+              Show Date :
+            </label>
             <input
+              id="date"
               required
               type="date"
               name="show_date"
               defaultValue={formatDate}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">Soundcheck time :</h6>{" "}
+            <label for="soundcheck" className="add-show-form-field">
+              Soundcheck time :
+            </label>{" "}
             <input
+              id="soundcheck"
               type="time"
               name="soundcheck_time"
               defaultValue={showToEdit.show.soundcheck_time}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">Show Start Time :</h6>{" "}
+            <label for="start" className="add-show-form-field">
+              Show Start Time :
+            </label>{" "}
             <input
+              id="start"
               type="time"
               name="set_start_time"
               defaultValue={showToEdit.show.set_start_time}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">Venue Website :</h6>{" "}
+            <label for="website" className="add-show-form-field">
+              Venue Website :
+            </label>{" "}
             <input
+              id="website"
               type="text"
               name="venue_website"
               defaultValue={showToEdit.show.venue_website}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">Line Up :</h6>{" "}
+            <label for="lineup" className="add-show-form-field">
+              Line Up :
+            </label>{" "}
             <input
+              id="lineup"
               type="text"
               name="line_up"
               defaultValue={showToEdit.show.line_up}
               onChange={handleChange}
             />
-            <h6 required className="add-show-form-field">
+            <label for="confirmed" required className="add-show-form-field">
               Confirmed :
-            </h6>{" "}
+            </label>{" "}
             <input
+              id="confirmed"
               type="checkbox"
               name="confirmed"
               defaultValue={showToEdit.show.confirmed}
               onChange={handleChange}
             />{" "}
-            <h6 className="add-show-form-field">Player Availability :</h6>{" "}
+            <label for="players" className="add-show-form-field">
+              Player Availability :
+            </label>{" "}
             <input
+              id="players"
               type="text"
               name="player_availability"
               defaultValue={showToEdit.show.player_availability}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">Fee :</h6>
+            <label for="fee" className="add-show-form-field">
+              Fee :
+            </label>
             <input
+              id="fee"
               type="int"
               name="fee"
               defaultValue={showToEdit.show.fee}
               onChange={handleChange}
             />{" "}
-            <h6 className="add-show-form-field">Paid in? :</h6>{" "}
+            <label for="paidin" className="add-show-form-field">
+              Paid in? :
+            </label>{" "}
             <input
+              id="paidin"
               type="checkbox"
               name="paid_in"
               defaultValue={showToEdit.show.paid_in}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">Paid out?:</h6>{" "}
+            <label for="paidout" className="add-show-form-field">
+              Paid out?:
+            </label>{" "}
             <input
+              id="paidout"
               type="checkbox"
               name="paid_out"
               defaultValue={showToEdit.show.paid_out}
               onChange={handleChange}
             />{" "}
-            <h6 className="add-show-form-field">Contact Details :</h6>{" "}
+            <label for="contact" className="add-show-form-field">
+              Contact Details :
+            </label>{" "}
             <input
+              id="contact"
               type="text"
               name="contact_details"
               defaultValue={showToEdit.show.contact_details}
               onChange={handleChange}
             />
-            <h6 className="add-show-form-field">Venue Notes :</h6>{" "}
+            <label for="notes" className="add-show-form-field">
+              Venue Notes :
+            </label>{" "}
             <input
+              id="notes"
               type="text"
               name="notes"
               defaultValue={showToEdit.show.notes}
