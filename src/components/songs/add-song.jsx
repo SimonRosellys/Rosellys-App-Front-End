@@ -22,11 +22,11 @@ function AddNewSong() {
   };
 
   const handleSubmit = (e) => {
-    console.log(newSong);
     addSong(newSong);
   };
+
   return (
-    <section className="standard-page">
+    <main className="standard-page">
       <Popup
         trigger={<h4 className="button-standard">ADD SONG</h4>}
         position="bottom center"
@@ -115,7 +115,7 @@ function AddNewSong() {
           </form>
         </div>
       </Popup>
-    </section>
+    </main>
   );
 }
 

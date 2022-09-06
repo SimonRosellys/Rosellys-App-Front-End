@@ -29,7 +29,7 @@ const CreateSetlist = (show_id) => {
     });
   }, []);
 
-  if (isLoading) return <p>Don't have a cow man, your songs are on the way</p>;
+  if (isLoading) return <p>Loading your setlists, please wait</p>;
 
   const draggables = document.querySelectorAll(".dnd-draggable");
   const containers = document.querySelectorAll(

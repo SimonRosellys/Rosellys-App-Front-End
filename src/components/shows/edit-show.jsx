@@ -80,164 +80,162 @@ function EditShow(showToEdit) {
       </button>
 
       {isShown && (
-        <div className="edit-show">
-          <form className="add-show-form" onSubmit={handleSubmit}>
-            <button className="button-standard" type="submit">
-              SAVE CHANGES
-            </button>
-            <Link className="button-standard" to="/create-setlist">
-              CREATE SET LIST
-            </Link>
-            <label for="name" className="add-show-form-field">
-              Venue Name :
-            </label>{" "}
-            <input
-              id="name"
-              required
-              type="text"
-              name="venue_name"
-              defaultValue={showToEdit.show.venue_name}
-              onChange={handleChange}
-            />
-            <label for="address" className="add-show-form-field">
-              Venue Address :
-            </label>{" "}
-            <input
-              id="address"
-              type="text"
-              name="venue_address"
-              defaultValue={showToEdit.show.venue_address}
-              onChange={handleChange}
-            />
-            <label for="date" className="add-show-form-field">
-              Show Date :
-            </label>
-            <input
-              id="date"
-              required
-              type="date"
-              name="show_date"
-              defaultValue={formatDate}
-              onChange={handleChange}
-            />
-            <label for="soundcheck" className="add-show-form-field">
-              Soundcheck time :
-            </label>{" "}
-            <input
-              id="soundcheck"
-              type="time"
-              name="soundcheck_time"
-              defaultValue={showToEdit.show.soundcheck_time}
-              onChange={handleChange}
-            />
-            <label for="start" className="add-show-form-field">
-              Show Start Time :
-            </label>{" "}
-            <input
-              id="start"
-              type="time"
-              name="set_start_time"
-              defaultValue={showToEdit.show.set_start_time}
-              onChange={handleChange}
-            />
-            <label for="website" className="add-show-form-field">
-              Venue Website :
-            </label>{" "}
-            <input
-              id="website"
-              type="text"
-              name="venue_website"
-              defaultValue={showToEdit.show.venue_website}
-              onChange={handleChange}
-            />
-            <label for="lineup" className="add-show-form-field">
-              Line Up :
-            </label>{" "}
-            <input
-              id="lineup"
-              type="text"
-              name="line_up"
-              defaultValue={showToEdit.show.line_up}
-              onChange={handleChange}
-            />
-            <label for="confirmed" required className="add-show-form-field">
-              Confirmed :
-            </label>{" "}
-            <input
-              id="confirmed"
-              type="checkbox"
-              name="confirmed"
-              defaultValue={showToEdit.show.confirmed}
-              onChange={handleChange}
-            />{" "}
-            <label for="players" className="add-show-form-field">
-              Player Availability :
-            </label>{" "}
-            <input
-              id="players"
-              type="text"
-              name="player_availability"
-              defaultValue={showToEdit.show.player_availability}
-              onChange={handleChange}
-            />
-            <label for="fee" className="add-show-form-field">
-              Fee :
-            </label>
-            <input
-              id="fee"
-              type="int"
-              name="fee"
-              defaultValue={showToEdit.show.fee}
-              onChange={handleChange}
-            />{" "}
-            <label for="paidin" className="add-show-form-field">
-              Paid in? :
-            </label>{" "}
-            <input
-              id="paidin"
-              type="checkbox"
-              name="paid_in"
-              defaultValue={showToEdit.show.paid_in}
-              onChange={handleChange}
-            />
-            <label for="paidout" className="add-show-form-field">
-              Paid out?:
-            </label>{" "}
-            <input
-              id="paidout"
-              type="checkbox"
-              name="paid_out"
-              defaultValue={showToEdit.show.paid_out}
-              onChange={handleChange}
-            />{" "}
-            <label for="contact" className="add-show-form-field">
-              Contact Details :
-            </label>{" "}
-            <input
-              id="contact"
-              type="text"
-              name="contact_details"
-              defaultValue={showToEdit.show.contact_details}
-              onChange={handleChange}
-            />
-            <label for="notes" className="add-show-form-field">
-              Venue Notes :
-            </label>{" "}
-            <input
-              id="notes"
-              type="text"
-              name="notes"
-              defaultValue={showToEdit.show.notes}
-              onChange={handleChange}
-            />
-            <button
-              className="button-standard"
-              onClick={() => handleDelete(showToEdit.show.show_id)}
-            >
-              DELETE THIS SHOW
-            </button>
-          </form>
-        </div>
+        <form className="add-show-form" onSubmit={handleSubmit}>
+          <button className="button-standard" type="submit">
+            SAVE CHANGES
+          </button>
+          <Link className="button-standard" to="/create-setlist">
+            CREATE SET LIST
+          </Link>
+          <label for="name" className="add-show-form-field">
+            Venue Name :
+          </label>{" "}
+          <input
+            id="name"
+            required
+            type="text"
+            name="venue_name"
+            defaultValue={showToEdit.show.venue_name}
+            onChange={handleChange}
+          />
+          <label for="address" className="add-show-form-field">
+            Venue Address :
+          </label>{" "}
+          <input
+            id="address"
+            type="text"
+            name="venue_address"
+            defaultValue={showToEdit.show.venue_address}
+            onChange={handleChange}
+          />
+          <label for="date" className="add-show-form-field">
+            Show Date :
+          </label>
+          <input
+            id="date"
+            required
+            type="date"
+            name="show_date"
+            defaultValue={formatDate}
+            onChange={handleChange}
+          />
+          <label for="soundcheck" className="add-show-form-field">
+            Soundcheck time :
+          </label>{" "}
+          <input
+            id="soundcheck"
+            type="time"
+            name="soundcheck_time"
+            defaultValue={showToEdit.show.soundcheck_time}
+            onChange={handleChange}
+          />
+          <label for="start" className="add-show-form-field">
+            Show Start Time :
+          </label>{" "}
+          <input
+            id="start"
+            type="time"
+            name="set_start_time"
+            defaultValue={showToEdit.show.set_start_time}
+            onChange={handleChange}
+          />
+          <label for="website" className="add-show-form-field">
+            Venue Website :
+          </label>{" "}
+          <input
+            id="website"
+            type="text"
+            name="venue_website"
+            defaultValue={showToEdit.show.venue_website}
+            onChange={handleChange}
+          />
+          <label for="lineup" className="add-show-form-field">
+            Line Up :
+          </label>{" "}
+          <input
+            id="lineup"
+            type="text"
+            name="line_up"
+            defaultValue={showToEdit.show.line_up}
+            onChange={handleChange}
+          />
+          <label for="confirmed" required className="add-show-form-field">
+            Confirmed :
+          </label>{" "}
+          <input
+            id="confirmed"
+            type="checkbox"
+            name="confirmed"
+            defaultValue={showToEdit.show.confirmed}
+            onChange={handleChange}
+          />{" "}
+          <label for="players" className="add-show-form-field">
+            Player Availability :
+          </label>{" "}
+          <input
+            id="players"
+            type="text"
+            name="player_availability"
+            defaultValue={showToEdit.show.player_availability}
+            onChange={handleChange}
+          />
+          <label for="fee" className="add-show-form-field">
+            Fee :
+          </label>
+          <input
+            id="fee"
+            type="int"
+            name="fee"
+            defaultValue={showToEdit.show.fee}
+            onChange={handleChange}
+          />{" "}
+          <label for="paidin" className="add-show-form-field">
+            Paid in? :
+          </label>{" "}
+          <input
+            id="paidin"
+            type="checkbox"
+            name="paid_in"
+            defaultValue={showToEdit.show.paid_in}
+            onChange={handleChange}
+          />
+          <label for="paidout" className="add-show-form-field">
+            Paid out?:
+          </label>{" "}
+          <input
+            id="paidout"
+            type="checkbox"
+            name="paid_out"
+            defaultValue={showToEdit.show.paid_out}
+            onChange={handleChange}
+          />{" "}
+          <label for="contact" className="add-show-form-field">
+            Contact Details :
+          </label>{" "}
+          <input
+            id="contact"
+            type="text"
+            name="contact_details"
+            defaultValue={showToEdit.show.contact_details}
+            onChange={handleChange}
+          />
+          <label for="notes" className="add-show-form-field">
+            Venue Notes :
+          </label>{" "}
+          <input
+            id="notes"
+            type="text"
+            name="notes"
+            defaultValue={showToEdit.show.notes}
+            onChange={handleChange}
+          />
+          <button
+            className="button-standard"
+            onClick={() => handleDelete(showToEdit.show.show_id)}
+          >
+            DELETE THIS SHOW
+          </button>
+        </form>
       )}
     </section>
   );

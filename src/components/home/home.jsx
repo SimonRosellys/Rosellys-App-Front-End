@@ -5,7 +5,7 @@ const Home = () => {
     <div>
       <img
         className="home-logo"
-        src={require("../../images/ALBC ROSELLYS LOGO CLEAR BG.JPG")}
+        src={require("../../images/black-rosellys-logo.JPG")}
         alt={"Rosellys Logo"}
       />
       <h1 className="dev">Log in section will be here when implemented</h1>

@@ -23,7 +23,7 @@ function SingleSong({ id }) {
   );
 
   return (
-    <section>
+    <main>
       <div>
         <h3
           onClick={() => {
@@ -35,7 +35,7 @@ function SingleSong({ id }) {
         {/* <p>{song.instrumentation}</p> */}
         {/* TODO: put in album name here */}
       </div>
-    </section>
+    </main>
   );
 }
 

@@ -8,7 +8,7 @@ function SingleSong({ id }) {
   let cover;
   let coverText;
   let stageReadyText;
-  let instrument = "Standard Set Up";
+  let instrument;
   let instrument2;
   let instrument3;
 
@@ -103,9 +103,9 @@ function SingleSong({ id }) {
   }
 
   return (
-    <section className="dev-box">
+    <main className="dev-box">
       <Popup trigger={<h4>{song.title}</h4>} position="bottom center">
-        <div>
+        <section>
           <p>Key: {song.song_key}</p>
           <p>
             Instrumentation: {instrument} {instrument2} {instrument3}
@@ -118,9 +118,9 @@ function SingleSong({ id }) {
           </p>
           <p>{stageReadyText}</p>
           <EditSong song={song} />
-        </div>
+        </section>
       </Popup>{" "}
-    </section>
+    </main>
   );
 }
 

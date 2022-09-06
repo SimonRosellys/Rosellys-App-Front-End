@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getShows } from "../../utils/api";
+import Moment from "moment";
 import SingleShow from "./single-show";
 import AddNewShow from "./add-show";
 import Popup from "reactjs-popup";
@@ -16,30 +17,39 @@ const Shows = () => {
     });
   }, []);
 
-  if (isLoading) return <p>Don't have a cow man, your shows are on the way</p>;
+  if (isLoading) return <p>Loading your shows, please wait</p>;
 
   return (
     <section>
-      <div className="title-and-button">
+      <header className="title-and-button">
         <h1 className="title-header">SHOWS</h1>
         <AddNewShow className="title-button" />
-      </div>
-      <nav>
-        {shows.map((show) => {
-          return (
-            <div className="show-list-items" key={show.show_id}>
-              <Popup
-                trigger={<h4>{show.venue_name}</h4>}
-                position="bottom center"
-              >
-                <div className="modal-content">
-                  <SingleShow id={show.show_id} />
-                </div>
-              </Popup>
-            </div>
-          );
-        })}
-      </nav>
+      </header>
+
+      <main>
+        <ul>
+          {shows.map((show) => {
+            const formatDate = Moment(show.show_date).format("ddd D MMM");
+            return (
+              <li className="show-list-items" key={shows.show_id}>
+                <Popup
+                  trigger={
+                    <div>
+                      <h4>{show.venue_name}</h4>
+                      <h6>{formatDate}</h6>
+                    </div>
+                  }
+                  position="bottom center"
+                >
+                  <div className="modal-content">
+                    <SingleShow id={show.show_id} />
+                  </div>
+                </Popup>
+              </li>
+            );
+          })}
+        </ul>
+      </main>
     </section>
   );
 };

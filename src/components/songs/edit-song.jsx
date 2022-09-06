@@ -41,98 +41,96 @@ function EditSong(songToEdit) {
 
   return (
     <section>
-      <h4 className="button-standard" onClick={() => handleShowMore()}>
+      <button className="button-standard" onClick={() => handleShowMore()}>
         {isShown ? "CANCEL" : "EDIT"}
-      </h4>
+      </button>
       {isShown && (
-        <div className="dev-box">
-          <form className="add-show-form" onSubmit={handleSubmit}>
-            <button className="button-standard" type="submit">
-              SAVE CHANGES
-            </button>
-            <label for="name" className="add-show-form-field">
-              Song Name :
-            </label>{" "}
-            <input
-              id="name"
-              required
-              type="text"
-              name="title"
-              defaultValue={song.song.title}
-              onChange={handleChange}
-            />
-            <label for="lyrics" className="add-song-form-field">
-              Lyrics :
-            </label>{" "}
-            <input
-              id="lyrics"
-              type="text"
-              name="lyrics"
-              defaultValue={song.song.lyrics}
-              onChange={handleChange}
-            />
-            <label for="key" className="add-song-form-field">
-              Key :
-            </label>
-            <input
-              id="key"
-              type="text"
-              name="song_key"
-              defaultValue={song.song.song_key}
-              onChange={handleChange}
-            />
-            <label for="instruments" className="add-song-form-field">
-              Instrumentation :
-            </label>{" "}
-            <input
-              id="instruments"
-              type="text"
-              name="instrumentation"
-              defaultValue={song.song.instrumentation}
-              onChange={handleChange}
-            />
-            <label for="composer" className="add-song-form-field">
-              Composer :
-            </label>{" "}
-            <input
-              id="composer"
-              type="text"
-              name="composer"
-              defaultValue={song.song.composer}
-              onChange={handleChange}
-            />
-            <label for="notes" className="add-show-form-field">
-              notes :
-            </label>{" "}
-            <input
-              id="notes"
-              type="text"
-              name="notes"
-              defaultValue={song.song.notes}
-              onChange={handleChange}
-            />
-            <label for="album" className="add-show-form-field">
-              album :
-            </label>{" "}
-            <input
-              id="album"
-              type="text"
-              name="album"
-              defaultValue={song.song.album}
-              onChange={handleChange}
-            />
-            <label for="ready" className="add-show-form-field">
-              stage ready :
-            </label>{" "}
-            <input
-              id="ready"
-              type="text"
-              name="stage_ready"
-              defaultValue={song.song.stage_ready}
-              onChange={handleChange}
-            />
-          </form>
-        </div>
+        <form className="add-show-form" onSubmit={handleSubmit}>
+          <button className="button-standard" type="submit">
+            SAVE CHANGES
+          </button>
+          <label htmlFor="name" className="add-show-form-field">
+            Song Name :
+          </label>{" "}
+          <input
+            id="name"
+            required
+            type="text"
+            name="title"
+            defaultValue={song.song.title}
+            onChange={handleChange}
+          />
+          <label htmlFor="lyrics" className="add-song-form-field">
+            Lyrics :
+          </label>{" "}
+          <input
+            id="lyrics"
+            type="text"
+            name="lyrics"
+            defaultValue={song.song.lyrics}
+            onChange={handleChange}
+          />
+          <label htmlFor="key" className="add-song-form-field">
+            Key :
+          </label>
+          <input
+            id="key"
+            type="text"
+            name="song_key"
+            defaultValue={song.song.song_key}
+            onChange={handleChange}
+          />
+          <label htmlFor="instruments" className="add-song-form-field">
+            Instrumentation :
+          </label>{" "}
+          <input
+            id="instruments"
+            type="text"
+            name="instrumentation"
+            defaultValue={song.song.instrumentation}
+            onChange={handleChange}
+          />
+          <label htmlFor="composer" className="add-song-form-field">
+            Composer :
+          </label>{" "}
+          <input
+            id="composer"
+            type="text"
+            name="composer"
+            defaultValue={song.song.composer}
+            onChange={handleChange}
+          />
+          <label htmlFor="notes" className="add-show-form-field">
+            notes :
+          </label>{" "}
+          <input
+            id="notes"
+            type="text"
+            name="notes"
+            defaultValue={song.song.notes}
+            onChange={handleChange}
+          />
+          <label htmlFor="album" className="add-show-form-field">
+            album :
+          </label>{" "}
+          <input
+            id="album"
+            type="text"
+            name="album"
+            defaultValue={song.song.album}
+            onChange={handleChange}
+          />
+          <label htmlFor="ready" className="add-show-form-field">
+            stage ready :
+          </label>{" "}
+          <input
+            id="ready"
+            type="text"
+            name="stage_ready"
+            defaultValue={song.song.stage_ready}
+            onChange={handleChange}
+          />
+        </form>
       )}
     </section>
   );

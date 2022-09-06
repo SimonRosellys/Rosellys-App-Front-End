@@ -20,8 +20,7 @@ function SingleSetlist({ id }) {
     });
   }, []);
 
-  if (isSongsLoading)
-    return <p>Don't have a cow man, your songs are on the way</p>;
+  if (isSongsLoading) return <p>Loading your setlists, please wait</p>;
 
   async function getSetlistAndShowData(id) {
     const list = await getSingleSetlist(id);
@@ -32,20 +31,19 @@ function SingleSetlist({ id }) {
   }
 
   if (isLoading) {
-    return <div className="App">Loading...</div>;
+    return <div className="App">Loading your setlists, please wait</div>;
   }
 
-  // console.log(show);
   return (
-    <section>
+    <main>
       <Popup trigger={<h4>{show.venue_name}</h4>} position="bottom center">
-        <div className="modal-content">
+        <ul className="modal-content">
           {setlist.list_array.map((song) => {
-            return <div key={song}>{songs[song].title}</div>;
+            return <li key={song}>{songs[song].title}</li>;
           })}
-        </div>
+        </ul>
       </Popup>
-    </section>
+    </main>
   );
 }
 

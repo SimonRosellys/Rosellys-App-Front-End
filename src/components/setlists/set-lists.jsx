@@ -12,26 +12,26 @@ function Set_Lists() {
   }, []);
 
   return (
-    <section>
-      <div className="title-and-button">
+    <>
+      <header className="title-and-button">
         <h1 className="list-title">SET LISTS</h1>
         <a href="/create-setlist" className="button-standard">
           CREATE SET LIST
         </a>
-      </div>
+      </header>
 
-      <nav>
-        {setlists.map((list) => {
-          return (
-            <div className="show-list-items" key={list.setlist_id}>
-              <div>
+      <main>
+        <ul>
+          {setlists.map((list) => {
+            return (
+              <li className="show-list-items" key={list.setlist_id}>
                 <SingleSetlist id={list.setlist_id} />
-              </div>
-            </div>
-          );
-        })}
-      </nav>
-    </section>
+              </li>
+            );
+          })}
+        </ul>
+      </main>
+    </>
   );
 }
 
