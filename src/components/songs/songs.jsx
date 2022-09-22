@@ -18,15 +18,15 @@ const Songs = () => {
 
   return (
     <section>
-      <div className="title-and-button">
-        <h1 className="list-title">SONGS</h1>
-        <AddNewSong className="title-button" />
+      <div>
+        <h1>SONGS</h1>
+        <AddNewSong />
       </div>
 
       <nav>
         {songs.map((song) => {
           return (
-            <div className="song-list-items" key={song.song_id}>
+            <div key={song.song_id}>
               <div>
                 <SingleSong id={song.song_id} />
               </div>

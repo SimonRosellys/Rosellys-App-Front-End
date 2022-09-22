@@ -1,9 +1,65 @@
 * {
-  box-sizing: border-box;
-  background: rgb(223, 193, 255);
+  /* box-sizing: border-box; */
+  background: #dfc1ff;
   color: rgb(0, 0, 0);
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+  padding: 0px;
+  /* margin: 1px; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
 }
 
+/* MESS AROUND WITH THE MODAL CSS BELOW TO GET POPUPS CORRECT */
+
+/* .modal {
+  font-size: 120px;
+} */
+/* .modal-header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+} */
+/* .modal-content {
+  width: 100%;
+  padding: 10px 5px;
+  color: #cfcece;
+} */
+/* .modal-actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+} */
+/* .modal-close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+} */
+
+/* [role="tooltip"].popup-content {
+  width: 98%;
+  box-shadow: #000000 5px 5px 15px 5px;
+  border-radius: 8px;
+  border: 2px solid rgb(93, 35, 251);
+  background: rgb(223, 193, 255);
+} */
+
+/* 
 ul {
   list-style-type: none;
   padding: 0;
@@ -38,25 +94,21 @@ input[type="text"] {
   width: 100%;
   padding: 5px 5px;
   margin: 1px 0;
-  /* box-sizing: border-box; */
 }
 input[type="date"] {
   width: 100%;
   padding: 5px 5px;
   margin: 1px 0;
-  /* box-sizing: border-box; */
 }
 input[type="time"] {
   width: 100%;
   padding: 5px 5px;
   margin: 1px 0;
-  /* box-sizing: border-box; */
 }
 input[type="int"] {
   width: 100%;
   padding: 5px 5px;
   margin: 1px 0;
-  /* box-sizing: border-box; */
 }
 
 .nav {
@@ -65,7 +117,6 @@ input[type="int"] {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  /* gap: 2rem; */
   padding: 0 1rem;
   height: 100px;
 }
@@ -103,23 +154,14 @@ input[type="int"] {
   background-color: rgb(148, 111, 251);
 }
 
-/* .nav li.active {
-  background-color: #555;
-}
-
-.nav li:hover {
-  background-color: #777;
-} */
 
 .list-title {
-  /* border: 1px solid #182a37; */
   text-align: center;
   margin-bottom: 1px;
   margin-top: 1px;
 }
 
 .show-list-items {
-  /* border: 1px solid #ff0000; */
   text-align: center;
   margin-bottom: 5px;
 }
@@ -136,7 +178,6 @@ input[type="int"] {
 
 .song-list-items {
   color: rgb(0, 0, 0);
-  /* border: 1px solid #ff0000; */
   text-align: center;
   margin-bottom: 5px;
   margin-top: 10px;
@@ -205,19 +246,6 @@ input[type="int"] {
   border: 2px solid rgb(93, 35, 251);
 }
 
-/* .add-show-button:hover {
-  background: rgb(189, 165, 255);
-}
-
-.add-show-button:active {
-  background: rgb(148, 111, 251);
-} */
-
-/* .add-show {
-  /* border: 1px solid #ff0000; */
-/* text-align: center; */
-/* } */
-
 .add-show-form {
   margin: 10px;
 }
@@ -239,8 +267,6 @@ input[type="int"] {
 }
 
 .dev-box {
-  /* border: 1px solid #6e2bff;
-  border-width: 3px; */
   width: 100%;
   align-items: center;
   margin-left: auto;
@@ -280,10 +306,10 @@ input[type="int"] {
 }
 .myButton:active {
   background: #144e75;
-}
+} */
 
 /* POPUP  ************************************************************ */
-.modal {
+/* .modal {
   font-size: 12px;
 }
 .modal-header {
@@ -324,11 +350,11 @@ input[type="int"] {
   border-radius: 5px;
   border: 1px solid rgb(93, 35, 251);
   background: rgb(223, 193, 255);
-}
+} */
 /* POPUP ************************************************************ */
 
 /* Drag and Drop ************************************************************ */
-.dnd-body {
+/* .dnd-body {
   margin: 0;
 }
 
@@ -367,6 +393,6 @@ input[type="int"] {
 
 .dnd-white-title {
   color: rgb(255, 255, 255);
-}
+} */
 
 /* Drag and Drop ************************************************************ */
