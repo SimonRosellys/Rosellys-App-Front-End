@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getSingleSetlist, getSingleShow, getSongs } from "../../utils/api";
-import Popup from "reactjs-popup";
+import { PopUpContent } from "./Setlists.styled";
 
 function SingleSetlist({ id }) {
   const [setlist, setSetlist] = useState([]);
@@ -36,13 +36,16 @@ function SingleSetlist({ id }) {
 
   return (
     <main>
-      <Popup trigger={<h4>{show.venue_name}</h4>} position="bottom center">
-        <ul className="modal-content">
+      <PopUpContent
+        trigger={<h4>{show.venue_name}</h4>}
+        position="bottom center"
+      >
+        <ul>
           {setlist.list_array.map((song) => {
             return <li key={song}>{songs[song].title}</li>;
           })}
         </ul>
-      </Popup>
+      </PopUpContent>
     </main>
   );
 }

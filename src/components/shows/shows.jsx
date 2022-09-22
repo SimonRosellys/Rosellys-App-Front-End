@@ -3,8 +3,8 @@ import { getShows } from "../../utils/api";
 import Moment from "moment";
 import SingleShow from "./single-show";
 import AddNewShow from "./add-show";
-import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
+import { PopUpContent } from "./Shows.styled";
 
 const Shows = () => {
   const [shows, setShows] = useState([]);
@@ -21,9 +21,9 @@ const Shows = () => {
 
   return (
     <section>
-      <header className="title-and-button">
-        <h1 className="title-header">SHOWS</h1>
-        <AddNewShow className="title-button" />
+      <header>
+        <h1>SHOWS</h1>
+        <AddNewShow />
       </header>
 
       <main>
@@ -31,8 +31,8 @@ const Shows = () => {
           {shows.map((show) => {
             const formatDate = Moment(show.show_date).format("ddd D MMM");
             return (
-              <li className="show-list-items" key={shows.show_id}>
-                <Popup
+              <li key={shows.show_id}>
+                <PopUpContent
                   trigger={
                     <div>
                       <h4>{show.venue_name}</h4>
@@ -40,11 +40,13 @@ const Shows = () => {
                     </div>
                   }
                   position="bottom center"
+                  modal
+                  closeOnDocumentClick
                 >
-                  <div className="modal-content">
+                  <div>
                     <SingleShow id={show.show_id} />
                   </div>
-                </Popup>
+                </PopUpContent>
               </li>
             );
           })}
