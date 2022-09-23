@@ -13,7 +13,7 @@ const CreateSetlist = (show_id) => {
       //
       const index = setlist.indexOf(songName);
       if (index > -1) {
-        let remainingList = setlist.splice(index, 1);
+        //let remainingList = setlist.splice(index, 1); // TODO: Why isn't this being used?
         setSetlist(setlist);
       }
       //

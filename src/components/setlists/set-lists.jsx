@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getSetlists } from "../../utils/api";
 import SingleSetlist from "./single-setlist";
 
-function Set_Lists() {
+function SetLists() {
   const [setlists, setSetlists] = useState([]);
 
   useEffect(() => {
@@ -35,4 +35,4 @@ function Set_Lists() {
   );
 }
 
-export default Set_Lists;
+export default SetLists;

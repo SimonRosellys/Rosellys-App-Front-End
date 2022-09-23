@@ -8,6 +8,9 @@ npm run build
 
 netlify deploy
 
-    Deploy to your production url:
+    Deploy to your production url: and set folder to ./build
 
 netlify deploy --prod
+
+
+DONT FORGET TO CHANGE API.JS

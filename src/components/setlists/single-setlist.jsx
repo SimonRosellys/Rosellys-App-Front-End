@@ -11,7 +11,7 @@ function SingleSetlist({ id }) {
 
   useEffect(() => {
     getSetlistAndShowData(id);
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     getSongs().then((songs) => {
