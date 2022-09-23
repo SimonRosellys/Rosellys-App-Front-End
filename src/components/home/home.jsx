@@ -1,15 +1,15 @@
 import React from "react";
+import { StyledHome } from "./Home.styled";
 
 const Home = () => {
   return (
-    <div>
+    <StyledHome>
       <img
-        className="home-logo"
         src={require("../../images/black-rosellys-logo.JPG")}
         alt={"Rosellys Logo"}
       />
-      <h1 className="dev">Log in section will be here when implemented</h1>
-    </div>
+      <h1>Log in section will be here when implemented</h1>
+    </StyledHome>
   );
 };
 

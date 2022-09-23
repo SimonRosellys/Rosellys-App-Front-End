@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { addShow } from "../../utils/api";
-import Popup from "reactjs-popup";
+import {
+  PopUpContent,
+  FormGroup,
+  Label,
+  Input,
+  Textarea,
+  Button,
+} from "./Shows.styled";
 
 function AddNewShow() {
   const [newShow, setNewShow] = useState({
@@ -29,138 +36,113 @@ function AddNewShow() {
 
   const handleSubmit = (e) => {
     // e.preventDefault(); // remove this when finished testing
-    addShow(newShow).then((res) => {
-    });
+    addShow(newShow).then((res) => {});
   };
 
   return (
-    <section className="standard-page">
-      <Popup
-        trigger={<h4 className="button-standard">ADD SHOW</h4>}
+    <section>
+      <PopUpContent
+        trigger={<Button>ADD SHOW</Button>}
         position="bottom center"
+        modal
+        closeOnDocumentClick
       >
-        <form className="add-show-form" onSubmit={handleSubmit}>
-          <label for="venue-name" className="add-show-form-field">
-            Venue Name :
-          </label>{" "}
-          <input
+        <FormGroup onSubmit={handleSubmit}>
+          <Label for="venue-name">Venue Name :</Label>{" "}
+          <Input
             required
             id="venue-name"
             type="text"
             name="venue_name"
             onChange={handleChange}
           />
-          <label for="address" className="add-show-form-field">
-            Venue Address :
-          </label>{" "}
-          <input
+          <Label for="address">Venue Address :</Label>{" "}
+          <Input
             id="address"
             type="text"
             name="venue_address"
             onChange={handleChange}
           />
-          <label className="add-show-form-field">Show Date :</label>{" "}
-          <input
+          <Label>Show Date :</Label>{" "}
+          <Input
             required
             id="date"
             type="date"
             name="show_date"
             onChange={handleChange}
           />
-          <label for="soundcheck" className="add-show-form-field">
-            Soundcheck time :
-          </label>{" "}
-          <input
+          <Label for="soundcheck">Soundcheck time :</Label>{" "}
+          <Input
             id="soundcheck"
             type="time"
             name="soundcheck_time"
             onChange={handleChange}
           />
-          <label for="start" className="add-show-form-field">
-            Show Start Time :
-          </label>{" "}
-          <input
+          <Label for="start">Show Start Time :</Label>{" "}
+          <Input
             id="start"
             type="time"
             name="set_start_time"
             onChange={handleChange}
           />
-          <label for="website" className="add-show-form-field">
-            Venue Website :
-          </label>{" "}
-          <input
+          <Label for="website">Venue Website :</Label>{" "}
+          <Input
             id="website"
             type="text"
             name="venue_website"
             onChange={handleChange}
           />
-          <label for="lineup" className="add-show-form-field">
-            Line Up :
-          </label>{" "}
-          <input
+          <Label for="lineup">Line Up :</Label>{" "}
+          <Input
             id="lineup"
             type="text"
             name="line_up"
             onChange={handleChange}
           />
-          <label for="confirmed" required className="add-show-form-field">
+          <Label for="confirmed" required>
             Confirmed :
-          </label>{" "}
-          <input
+          </Label>{" "}
+          <Input
             id="confirmed"
             type="checkbox"
             name="confirmed"
             onChange={handleChange}
           />{" "}
-          <label for="players" className="add-show-form-field">
-            Player Availability :
-          </label>{" "}
-          <input
+          <Label for="players">Player Availability :</Label>{" "}
+          <Input
             id="players"
             type="text"
             name="player_availability"
             onChange={handleChange}
           />
-          <label for="fee" className="add-show-form-field">
-            Fee :
-          </label>
-          <input id="fee" type="int" name="fee" onChange={handleChange} />{" "}
-          <label for="paidin" className="add-show-form-field">
-            Paid in? :
-          </label>{" "}
-          <input
+          <Label for="fee">Fee :</Label>
+          <Input id="fee" type="int" name="fee" onChange={handleChange} />{" "}
+          <Label for="paidin">Paid in? :</Label>{" "}
+          <Input
             id="paidin"
             type="checkbox"
             name="paid_in"
             onChange={handleChange}
           />
-          <label for="paidout" className="add-show-form-field">
-            Paid out?:
-          </label>{" "}
-          <input
+          <Label for="paidout">Paid out?:</Label>{" "}
+          <Input
             id="paidout"
             type="checkbox"
             name="paid_out"
             onChange={handleChange}
           />{" "}
-          <label for="contact" className="add-show-form-field">
-            Contact Details :
-          </label>{" "}
-          <input
+          <Label for="contact">Contact Details :</Label>{" "}
+          <Input
             id="contact"
             type="text"
             name="contact_details"
             onChange={handleChange}
           />
-          <label for="notes" className="add-show-form-field">
-            Venue Notes :
-          </label>{" "}
-          <input id="notes" type="text" name="notes" onChange={handleChange} />
-          <button className="button-standard" type="submit">
-            SAVE SHOW
-          </button>
-        </form>
-      </Popup>
+          <Label for="notes">Venue Notes :</Label>{" "}
+          <Input id="notes" type="text" name="notes" onChange={handleChange} />
+          <Button type="submit">SAVE SHOW</Button>
+        </FormGroup>
+      </PopUpContent>
     </section>
   );
 }

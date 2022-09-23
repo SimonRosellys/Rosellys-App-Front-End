@@ -1,11 +1,13 @@
+import styled from "styled-components";
+import { StyledNavbar } from "./Navbar.styled";
+
 export default function Navbar() {
   return (
-    <nav className="nav">
+    <StyledNavbar>
       <ul>
-        <li className="site-title">
+        <li>
           <a href="/">
             <img
-              className="nav-logo"
               src={require("../../images/white-rosellys-logo.png")}
               alt={"Rosellys Logo"}
             />
@@ -21,6 +23,6 @@ export default function Navbar() {
           <a href="/songs">Songs</a>
         </li>
       </ul>
-    </nav>
+    </StyledNavbar>
   );
 }

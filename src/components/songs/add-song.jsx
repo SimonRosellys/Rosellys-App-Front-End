@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { addSong } from "../../utils/api";
-import Popup from "reactjs-popup";
+import {
+  PopUpContent,
+  FormGroup,
+  Label,
+  Input,
+  Textarea,
+  Button,
+} from "./Songs.styled";
 
 function AddNewSong() {
   const [newSong, setNewSong] = useState({
@@ -26,95 +33,80 @@ function AddNewSong() {
   };
 
   return (
-    <main className="standard-page">
-      <Popup
-        trigger={<h4 className="button-standard">ADD SONG</h4>}
+    <main>
+      <PopUpContent
+        trigger={<Button>ADD SONG</Button>}
         position="bottom center"
+        modal
+        closeOnDocumentClick
       >
-        <div className="add-song">
-          <form className="add-song-form" onSubmit={handleSubmit}>
-            <label for="name" className="add-song-form-field">
-              Song Name :
-            </label>{" "}
-            <input
+        <div>
+          <FormGroup onSubmit={handleSubmit}>
+            <Label for="name">Song Name :</Label>{" "}
+            <Input
               id="name"
               required
               type="text"
               name="title"
               onChange={handleChange}
             />
-            <label for="lyrics" className="add-song-form-field">
-              Lyrics :
-            </label>{" "}
-            <input
+            <Label for="lyrics">Lyrics :</Label>{" "}
+            <Textarea
               id="lyrics"
               type="text"
               name="lyrics"
               onChange={handleChange}
             />
-            <label for="key" className="add-song-form-field">
-              Key :
-            </label>{" "}
-            <input
+            <Label for="key">Key :</Label>{" "}
+            <Input
               id="key"
               type="text"
               name="song_key"
               onChange={handleChange}
             />
-            <label for="instruments" className="add-song-form-field">
-              Instrumentation :
-            </label>{" "}
-            <input
+            <Label for="instruments">Instrumentation :</Label>{" "}
+            <Input
               id="instruments"
               type="text"
               name="instrumentation"
               defaultValue="FIDDLE or ACCORDIAN or BANJO"
               onChange={handleChange}
             />
-            <label for="composer" className="add-song-form-field">
-              Composer :
-            </label>{" "}
-            <input
+            <Label for="composer">Composer :</Label>{" "}
+            <Input
               id="composer"
               type="text"
               name="composer"
               onChange={handleChange}
             />
-            <label for="notes" className="add-song-form-field">
-              Notes :
-            </label>{" "}
-            <input
+            <Label for="notes">Notes :</Label>{" "}
+            <Input
               id="notes"
               type="text"
               name="notes"
               onChange={handleChange}
             />
-            <label for="album" className="add-song-form-field">
-              Album :
-            </label>{" "}
-            <input
+            <Label for="album">Album :</Label>{" "}
+            <Textarea
               id="album"
               type="text"
               name="album"
               defaultValue="1 = Drive Through The Night. 2 = One Way St. 3 = Two Much Like Trouble. 4 = The Granary Sessions. 5 = On The Porch"
               onChange={handleChange}
+              rows={2}
             />
-            <label for="ready" className="add-song-form-field">
-              Stage Ready? :
-            </label>{" "}
-            <input
+            <Label for="ready">Stage Ready? :</Label>{" "}
+            <Input
               id="ready"
               type="text"
               name="stage_ready"
               defaultValue="Y = yes and N = no"
               onChange={handleChange}
             />
-            <button className="button-standard" type="submit">
-              SAVE SONG
-            </button>
-          </form>
+            <Button type="submit">SAVE SONG</Button>
+          </FormGroup>
         </div>
-      </Popup>
+      </PopUpContent>
     </main>
   );
 }
