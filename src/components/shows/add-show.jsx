@@ -36,7 +36,9 @@ function AddNewShow() {
 
   const handleSubmit = (e) => {
     // e.preventDefault(); // remove this when finished testing
-    addShow(newShow).then((res) => {});
+    addShow(newShow);
+    // addShow(newShow).then((res) => {});
+    window.location.reload();
   };
 
   return (
@@ -140,7 +142,9 @@ function AddNewShow() {
           />
           <Label for="notes">Venue Notes :</Label>{" "}
           <Input id="notes" type="text" name="notes" onChange={handleChange} />
-          <Button type="submit">SAVE SHOW</Button>
+          <Button type="submit" onClick={handleSubmit}>
+            SAVE SHOW
+          </Button>
         </FormGroup>
       </PopUpContent>
     </section>

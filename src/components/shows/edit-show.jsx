@@ -58,17 +58,18 @@ function EditShow(showToEdit) {
   };
 
   const handleSubmit = (e) => {
-    for (let i = 0; i < 15; i++) {
-      // FIXME: This is the current number of fields (14) and will need to be updated or made dynamic if further fields are added
-      // console.log(e.target);
-      const { name, value } = e.target[i];
-      setNewShow((prev) => {
-        return { ...prev, [name]: value };
-      });
-    }
+    // for (let i = 0; i < 15; i++) {
+    //   // FIXME: This is the current number of fields (14) and will need to be updated or made dynamic if further fields are added
+    //   // console.log(e.target);
+    //   const { name, value } = e.target[i];
+    //   setNewShow((prev) => {
+    //     return { ...prev, [name]: value };
+    //   });
+    // }
     // e.preventDefault(); // TODO: remove this when done to rerender.
     // newShow is good to go, except for the checkboxes.
     editShow(showToEdit.show.show_id, newShow);
+    window.location.reload();
   };
 
   const formatDate = Moment(showToEdit.show.show_date).format("YYYY-MM-DD");
@@ -81,7 +82,9 @@ function EditShow(showToEdit) {
 
       {isShown && (
         <FormGroup onSubmit={handleSubmit}>
-          <Button type="submit">SAVE CHANGES</Button>
+          <Button type="submit" onClick={handleSubmit}>
+            SAVE CHANGES
+          </Button>
           <Button to="/create-setlist">CREATE SET LIST</Button>
           <Label for="name">Venue Name :</Label>{" "}
           <Input
@@ -199,6 +202,9 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.notes}
             onChange={handleChange}
           />
+          <Button type="submit" onClick={handleSubmit}>
+            SAVE CHANGES
+          </Button>
           <Button onClick={() => handleDelete(showToEdit.show.show_id)}>
             DELETE THIS SHOW
           </Button>

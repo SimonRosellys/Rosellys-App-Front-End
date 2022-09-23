@@ -30,6 +30,7 @@ function AddNewSong() {
 
   const handleSubmit = (e) => {
     addSong(newSong);
+    window.location.reload();
   };
 
   return (
@@ -42,7 +43,7 @@ function AddNewSong() {
       >
         <div>
           <FormGroup onSubmit={handleSubmit}>
-            <Label for="name">Song Name :</Label>{" "}
+            <Label htmlFor="name">Song Name :</Label>{" "}
             <Input
               id="name"
               required
@@ -50,21 +51,21 @@ function AddNewSong() {
               name="title"
               onChange={handleChange}
             />
-            <Label for="lyrics">Lyrics :</Label>{" "}
+            <Label htmlFor="lyrics">Lyrics :</Label>{" "}
             <Textarea
               id="lyrics"
               type="text"
               name="lyrics"
               onChange={handleChange}
             />
-            <Label for="key">Key :</Label>{" "}
+            <Label htmlFor="key">Key :</Label>{" "}
             <Input
               id="key"
               type="text"
               name="song_key"
               onChange={handleChange}
             />
-            <Label for="instruments">Instrumentation :</Label>{" "}
+            <Label htmlFor="instruments">Instrumentation :</Label>{" "}
             <Input
               id="instruments"
               type="text"
@@ -72,21 +73,21 @@ function AddNewSong() {
               defaultValue="FIDDLE or ACCORDIAN or BANJO"
               onChange={handleChange}
             />
-            <Label for="composer">Composer :</Label>{" "}
+            <Label htmlFor="composer">Composer :</Label>{" "}
             <Input
               id="composer"
               type="text"
               name="composer"
               onChange={handleChange}
             />
-            <Label for="notes">Notes :</Label>{" "}
+            <Label htmlFor="notes">Notes :</Label>{" "}
             <Input
               id="notes"
               type="text"
               name="notes"
               onChange={handleChange}
             />
-            <Label for="album">Album :</Label>{" "}
+            <Label htmlFor="album">Album :</Label>{" "}
             <Textarea
               id="album"
               type="text"
@@ -95,7 +96,7 @@ function AddNewSong() {
               onChange={handleChange}
               rows={2}
             />
-            <Label for="ready">Stage Ready? :</Label>{" "}
+            <Label htmlFor="ready">Stage Ready? :</Label>{" "}
             <Input
               id="ready"
               type="text"
@@ -103,7 +104,9 @@ function AddNewSong() {
               defaultValue="Y = yes and N = no"
               onChange={handleChange}
             />
-            <Button type="submit">SAVE SONG</Button>
+            <Button type="submit" onClick={handleSubmit}>
+              SAVE SONG
+            </Button>
           </FormGroup>
         </div>
       </PopUpContent>

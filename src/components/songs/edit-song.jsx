@@ -29,17 +29,9 @@ function EditSong(songToEdit) {
   };
 
   const handleSubmit = (e) => {
-    for (let i = 0; i < 8; i++) {
-      // FIXME: This is the current number of fields (8) and will need to be updated or made dynamic if further fields are added
-      const { name, value } = e.target[i];
-      setNewSong((prev) => {
-        return { ...prev, [name]: value };
-      });
-    }
-    // e.preventDefault(); // TODO: remove this when done to rerender.
     editSong(song.song.song_id, newSong);
+    window.location.reload();
   };
-  console.log(song);
 
   return (
     <section>
@@ -48,7 +40,9 @@ function EditSong(songToEdit) {
       </Button>
       {isShown && (
         <FormGroup onSubmit={handleSubmit}>
-          <Button type="submit">SAVE CHANGES</Button>
+          <Button type="submit" onClick={handleSubmit}>
+            SAVE CHANGES
+          </Button>
           <Label htmlFor="name">Song Name :</Label>{" "}
           <Input
             id="name"
@@ -115,6 +109,9 @@ function EditSong(songToEdit) {
             defaultValue={song.song.stage_ready}
             onChange={handleChange}
           />
+          <Button type="submit" onClick={handleSubmit}>
+            SAVE CHANGES
+          </Button>
         </FormGroup>
       )}
     </section>

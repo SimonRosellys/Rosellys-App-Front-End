@@ -2,8 +2,8 @@ import axios from "axios";
 
 const rosellysApi = axios.create({
   // Alternate between these two for testing
-  baseURL: "https://rosellys-app.herokuapp.com/api",
-  // baseURL: "http://localhost:9090/api",
+  // baseURL: "https://rosellys-app.herokuapp.com/api",
+  baseURL: "http://localhost:9090/api",
 });
 
 //SHOWS
