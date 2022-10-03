@@ -86,7 +86,7 @@ function EditShow(showToEdit) {
             SAVE CHANGES
           </Button>
           <Button to="/create-setlist">CREATE SET LIST</Button>
-          <Label for="name">Venue Name :</Label>{" "}
+          <Label htmlFor="name">Venue Name :</Label>{" "}
           <Input
             id="name"
             required
@@ -95,7 +95,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.venue_name}
             onChange={handleChange}
           />
-          <Label for="address">Venue Address :</Label>{" "}
+          <Label htmlFor="address">Venue Address :</Label>{" "}
           <Input
             id="address"
             type="text"
@@ -103,7 +103,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.venue_address}
             onChange={handleChange}
           />
-          <Label for="date">Show Date :</Label>
+          <Label htmlFor="date">Show Date :</Label>
           <Input
             id="date"
             required
@@ -112,7 +112,7 @@ function EditShow(showToEdit) {
             defaultValue={formatDate}
             onChange={handleChange}
           />
-          <Label for="soundcheck">Soundcheck time :</Label>{" "}
+          <Label htmlFor="soundcheck">Soundcheck time :</Label>{" "}
           <Input
             id="soundcheck"
             type="time"
@@ -120,7 +120,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.soundcheck_time}
             onChange={handleChange}
           />
-          <Label for="start">Show Start Time :</Label>{" "}
+          <Label htmlFor="start">Show Start Time :</Label>{" "}
           <Input
             id="start"
             type="time"
@@ -128,7 +128,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.set_start_time}
             onChange={handleChange}
           />
-          <Label for="website">Venue Website :</Label>{" "}
+          <Label htmlFor="website">Venue Website :</Label>{" "}
           <Input
             id="website"
             type="text"
@@ -136,7 +136,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.venue_website}
             onChange={handleChange}
           />
-          <Label for="lineup">Line Up :</Label>{" "}
+          <Label htmlFor="lineup">Line Up :</Label>{" "}
           <Input
             id="lineup"
             type="text"
@@ -144,7 +144,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.line_up}
             onChange={handleChange}
           />
-          <Label for="confirmed" required>
+          <Label htmlFor="confirmed" required>
             Confirmed :
           </Label>{" "}
           <Input
@@ -154,7 +154,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.confirmed}
             onChange={handleChange}
           />{" "}
-          <Label for="players">Player Availability :</Label>{" "}
+          <Label htmlFor="players">Player Availability :</Label>{" "}
           <Input
             id="players"
             type="text"
@@ -162,7 +162,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.player_availability}
             onChange={handleChange}
           />
-          <Label for="fee">Fee :</Label>
+          <Label htmlFor="fee">Fee :</Label>
           <Input
             id="fee"
             type="int"
@@ -170,7 +170,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.fee}
             onChange={handleChange}
           />{" "}
-          <Label for="paidin">Paid in? :</Label>{" "}
+          <Label htmlFor="paidin">Paid in? :</Label>{" "}
           <Input
             id="paidin"
             type="checkbox"
@@ -178,7 +178,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.paid_in}
             onChange={handleChange}
           />
-          <Label for="paidout">Paid out?:</Label>{" "}
+          <Label htmlFor="paidout">Paid out?:</Label>{" "}
           <Input
             id="paidout"
             type="checkbox"
@@ -186,7 +186,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.paid_out}
             onChange={handleChange}
           />{" "}
-          <Label for="contact">Contact Details :</Label>{" "}
+          <Label htmlFor="contact">Contact Details :</Label>{" "}
           <Input
             id="contact"
             type="text"
@@ -194,7 +194,7 @@ function EditShow(showToEdit) {
             defaultValue={showToEdit.show.contact_details}
             onChange={handleChange}
           />
-          <Label for="notes">Venue Notes :</Label>{" "}
+          <Label htmlFor="notes">Venue Notes :</Label>{" "}
           <Input
             id="notes"
             type="text"

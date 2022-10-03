@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getSongs } from "../../utils/api";
 import SingleSong from "./single-song";
 import AddNewSong from "./add-song";
+import { Header } from "./Songs.styled";
 
 const Songs = () => {
   const [songs, setSongs] = useState([]);
@@ -14,14 +15,14 @@ const Songs = () => {
     });
   }, []);
 
-  if (isLoading) return <p>Don't have a cow man, your songs are on the way</p>;
+  if (isLoading) return <p>Your songs are loading, please wait...</p>;
 
   return (
     <section>
-      <div>
+      <Header>
         <h1>SONGS</h1>
         <AddNewSong />
-      </div>
+      </Header>
 
       <nav>
         {songs.map((song) => {

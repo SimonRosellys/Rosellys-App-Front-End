@@ -4,7 +4,7 @@ import Moment from "moment";
 import SingleShow from "./single-show";
 import AddNewShow from "./add-show";
 import "reactjs-popup/dist/index.css";
-import { PopUpContent } from "./Shows.styled";
+import { PopUpContent, Header } from "./Shows.styled";
 
 const Shows = () => {
   const [shows, setShows] = useState([]);
@@ -21,10 +21,10 @@ const Shows = () => {
 
   return (
     <section>
-      <header>
+      <Header>
         <h1>SHOWS</h1>
         <AddNewShow />
-      </header>
+      </Header>
 
       <main>
         <ul>

@@ -15,6 +15,7 @@ export const getShows = async () => {
 
 export const deleteShow = async (id) => {
   const { data } = await rosellysApi.delete(`/shows/${id}`);
+  console.log(data);
 };
 
 export const getSingleShow = async (id) => {
@@ -23,7 +24,7 @@ export const getSingleShow = async (id) => {
 };
 
 export const addShow = (show) => {
-  return rosellysApi
+  rosellysApi
     .post(`/shows`, show, { headers: { "Content-Type": "application/json" } })
     .then(({ data }) => {
       return data;
@@ -31,7 +32,7 @@ export const addShow = (show) => {
 };
 
 export const editShow = (id, newShow) => {
-  return rosellysApi
+  rosellysApi
     .put(`/shows/${id}`, newShow, {
       headers: { "Content-Type": "application/json" },
     })
@@ -53,7 +54,7 @@ export const getSingleSong = async (id) => {
 };
 
 export const addSong = (song) => {
-  return rosellysApi
+  rosellysApi
     .post(`/songs`, song, { headers: { "Content-Type": "application/json" } })
     .then(({ data }) => {
       return data;
@@ -61,7 +62,7 @@ export const addSong = (song) => {
 };
 
 export const editSong = (id, newSong) => {
-  return rosellysApi
+  rosellysApi
     .put(`/songs/${id}`, newSong, {
       headers: { "Content-Type": "application/json" },
     })

@@ -2,6 +2,10 @@ import React from "react";
 import Popup from "reactjs-popup";
 import styled from "styled-components";
 
+export const Header = styled.header`
+  padding-top: 80px;
+`;
+
 export const StyledAlbumCover = styled.div`
   img {
     padding: 0;

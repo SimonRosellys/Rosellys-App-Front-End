@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import Popup from "reactjs-popup";
 
+export const Header = styled.header`
+  padding-top: 80px;
+`;
+
 export const Button = styled.button`
   color: #ffffff;
   font-size: 12px;

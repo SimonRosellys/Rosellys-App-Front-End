@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getSetlists } from "../../utils/api";
 import SingleSetlist from "./single-setlist";
-import { Button } from "./Setlists.styled";
+import { Button, Header } from "./Setlists.styled";
 
 function SetLists() {
   const [setlists, setSetlists] = useState([]);
@@ -13,13 +13,13 @@ function SetLists() {
   }, []);
 
   return (
-    <>
-      <header>
+    <section>
+      <Header>
         <h1>SET LISTS</h1>
         <Button a href="/create-setlist">
           CREATE SET LIST
         </Button>
-      </header>
+      </Header>
 
       <main>
         <ul>
@@ -32,7 +32,7 @@ function SetLists() {
           })}
         </ul>
       </main>
-    </>
+    </section>
   );
 }
 
