@@ -58,14 +58,6 @@ function EditShow(showToEdit) {
   };
 
   const handleSubmit = (e) => {
-    // for (let i = 0; i < 15; i++) {
-    //   // FIXME: This is the current number of fields (14) and will need to be updated or made dynamic if further fields are added
-    //   // console.log(e.target);
-    //   const { name, value } = e.target[i];
-    //   setNewShow((prev) => {
-    //     return { ...prev, [name]: value };
-    //   });
-    // }
     // e.preventDefault(); // TODO: remove this when done to rerender.
     // newShow is good to go, except for the checkboxes.
     editShow(showToEdit.show.show_id, newShow);
@@ -85,7 +77,9 @@ function EditShow(showToEdit) {
           <Button type="submit" onClick={handleSubmit}>
             SAVE CHANGES
           </Button>
-          <Button to="/create-setlist">CREATE SET LIST</Button>
+          <a href="/create-setlist">
+            <Button>CREATE SET LIST</Button>
+          </a>
           <Label htmlFor="name">Venue Name :</Label>{" "}
           <Input
             id="name"

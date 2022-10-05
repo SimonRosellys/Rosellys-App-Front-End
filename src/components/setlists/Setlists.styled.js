@@ -45,3 +45,21 @@ export const PopUpContent = styled(Popup)`
     overflow-y: auto;
   }
 `;
+
+export const Container = styled.div`
+  background-color: #333;
+  padding: 1rem;
+  margin-top: 1rem;
+`;
+
+export const Draggable = styled.p`
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid black;
+  cursor: move;
+
+  .dragging {
+    opacity: 0.5;
+    border: 2px solid red;
+  }
+`;
