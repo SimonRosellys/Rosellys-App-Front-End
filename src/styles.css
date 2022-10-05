@@ -14,6 +14,10 @@
   /* -moz-osx-font-smoothing: grayscale; */
 }
 
+.draggable.dragging {
+  opacity: 0.5;
+}
+
 /* MESS AROUND WITH THE MODAL CSS BELOW TO GET POPUPS CORRECT */
 
 /* .modal {

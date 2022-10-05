@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { getSongs } from "../../utils/api";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import {
+  Body,
+  Button,
+  Container,
+  Draggable,
+  Dragging,
+} from "./Setlists.styled";
+import "../../styles.css";
 
 const CreateSetlist = (show_id) => {
   const [songs, setSongs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [setlist, setSetlist] = useState([]);
-
-  const handleAddToList = (songName) => {
-    if (setlist.includes(songName)) {
-      //
-      const index = setlist.indexOf(songName);
-      if (index > -1) {
-        //let remainingList = setlist.splice(index, 1); // TODO: Why isn't this being used?
-        setSetlist(setlist);
-      }
-      //
-    } else {
-      setSetlist([...setlist.concat(songName)]); // add
-    }
-  };
 
   useEffect(() => {
     getSongs().then((songs) => {
@@ -31,21 +23,17 @@ const CreateSetlist = (show_id) => {
 
   if (isLoading) return <p>Loading your setlists, please wait</p>;
 
-  // DRAGGABLE SECTION
-  const draggables = document.querySelectorAll(".dnd-draggable");
-  const containers = document.querySelectorAll(
-    ".dnd-container-left, .dnd-container-right"
-  );
+  // DRAGGABLE SECTION ********************************************************
+
+  const draggables = document.querySelectorAll(".draggable");
+  const containers = document.querySelectorAll(".container");
 
   draggables.forEach((draggable) => {
     draggable.addEventListener("dragstart", () => {
       draggable.classList.add("dragging");
     });
 
-    draggable.addEventListener("dragend", (e) => {
-      let songName = draggable.innerHTML;
-      handleAddToList(songName);
-      //TODO: pass the song index through here!!!!!!!!!!!!
+    draggable.addEventListener("dragend", () => {
       draggable.classList.remove("dragging");
     });
   });
@@ -65,7 +53,7 @@ const CreateSetlist = (show_id) => {
 
   function getDragAfterElement(container, y) {
     const draggableElements = [
-      ...container.querySelectorAll(".dnd-draggable:not(.dragging)"),
+      ...container.querySelectorAll(".draggable:not(.dragging)"),
     ];
 
     return draggableElements.reduce(
@@ -78,37 +66,59 @@ const CreateSetlist = (show_id) => {
           return closest;
         }
       },
-      { offset: Number.NEGATIVE_INFINITY }
+      {
+        offset: Number.NEGATIVE_INFINITY,
+      }
     ).element;
   }
 
-  document.addEventListener("dragend", (e) => {
-    console.log(e);
-  });
+  // DRAGGABLE SECTION END ********************************************************
+
+  const handleSave = (songs) => {
+    const result = songs.split(/\r?\n/);
+    // map through result removing selected songs and ''
+    const finalSetList = result.filter(
+      (word) =>
+        word !== "BREAK" &&
+        word !== "" &&
+        word !== "Selected songs" &&
+        word !== "Drag here"
+    );
+    setSetlist(finalSetList);
+    // console.log(filtered);
+  };
 
   return (
-    <section>
-      <DndProvider backend={HTML5Backend}>
-        <div className="dnd-container-left">
-          <p className="dnd-white-title">songs to choose from</p>
-          {songs.map((song) => {
-            return (
-              <div
-                className="dnd-draggable"
-                draggable="true"
-                value={song.song_id}
-                key={song.song_id}
-              >
-                {song.title}
-              </div>
-            );
-          })}
-        </div>
-        <div className="dnd-container-right">
-          <p className="dnd-white-title">chosen songs</p>
-        </div>
-      </DndProvider>
-    </section>
+    <body>
+      <div>
+        Temporary spacer <br />
+        Temporary spacer
+      </div>
+      <Container className="container">
+        <p>Selected songs</p>
+        <Draggable className="draggable" draggable="true">
+          Drag here
+        </Draggable>
+      </Container>
+      <Button onClick={() => handleSave(containers[0].innerText)}>log</Button>{" "}
+      THIS WORKS
+      {/* <Button onClick={() => handleSave(containers)}>log</Button> */}
+      <Container className="container">
+        <p>Songs to select from</p>
+        {songs.map((song) => {
+          return (
+            <Draggable
+              className="draggable"
+              draggable="true"
+              key={song.song_id}
+              value={song.title}
+            >
+              {song.title}
+            </Draggable>
+          );
+        })}
+      </Container>
+    </body>
   );
 };
 
