@@ -16,9 +16,10 @@ function SetLists() {
     <section>
       <Header>
         <h1>SET LISTS</h1>
-        <Button a href="/create-setlist">
-          CREATE SET LIST
-        </Button>
+
+        <a href="/create-setlist">
+          <Button>CREATE SET LIST</Button>
+        </a>
       </Header>
 
       <main>

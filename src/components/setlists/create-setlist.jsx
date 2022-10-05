@@ -31,6 +31,7 @@ const CreateSetlist = (show_id) => {
 
   if (isLoading) return <p>Loading your setlists, please wait</p>;
 
+  // DRAGGABLE SECTION
   const draggables = document.querySelectorAll(".dnd-draggable");
   const containers = document.querySelectorAll(
     ".dnd-container-left, .dnd-container-right"
