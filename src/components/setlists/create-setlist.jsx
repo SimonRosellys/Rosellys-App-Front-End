@@ -85,7 +85,7 @@ const CreateSetlist = (show_id) => {
         word !== "Drag here"
     );
     setSetlist(finalSetList);
-    // console.log(filtered);
+    console.log(finalSetList);
   };
 
   return (
